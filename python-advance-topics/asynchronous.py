@@ -1,6 +1,17 @@
 """
 Reference: https://www.linkedin.com/pulse/asynchronous-programming-asyncawait-asyncio-elshad-karimov/
 """
+"""
+Asynchronous
+-----asyncio
+----------gather
+----------wait
+-----multiprocessing
+----------pool
+---------------map
+---------------apply
+----------process
+"""
 import asyncio
 import aiohttp
 

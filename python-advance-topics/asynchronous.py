@@ -1,33 +1,45 @@
 """
 Reference: https://www.linkedin.com/pulse/asynchronous-programming-asyncawait-asyncio-elshad-karimov/
 """
+import time
+import json
+import asyncio
+import aiohttp
+from multiprocessing import Pool, cpu_count, Queue, Manager, Process
+
 """
 Asynchronous
 -----asyncio
-----------gather
-----------wait
+---------~gather
+---------------return all response including error response in one response. so can't cancel unsuccessful tasks.
+---------~wait
+---------------return completed tasks and and pending tasks separately. so pending tasks can be canceled. 
 -----multiprocessing
-----------pool
----------------map
----------------apply
-----------process
+----------~pool
+---------------~map
+--------------------simple way to run worker process. can't sync between two process.
+---------------~apply
+--------------------simple way to run worker process. can't sync between two process.
+----------~process
+--------------------more control over the processes. can sync data between two processes. also, if failed to complete any task, we can get error cause.
 """
-import asyncio
-import aiohttp
+
 
 # Topic - 1. Basic async/await Usage
 async def main():
     print("Hello")
-    await  asyncio.sleep(1) # This 1 second other tasks will perform, await will not prevent any blockage in code execution for this 1 second.
+    await asyncio.sleep(1)  # This 1 second other tasks will perform, await will not prevent any blockage in code execution for this 1 second.
     print("World")
 
 asyncio.run(main())
 
+
 # Topic - 2. asyncio with aiohttp
 async def fetch(url):
-    async with aiohttp.ClientSession() as session: # This creates an asynchronous context manager, initiating a session for HTTP requests.
-        async with session.get(url) as response: # This asynchronously sends a GET request to the provided URL and waits for the response.
-            return await response.text() # It waits for and returns the response text (HTML content, in most cases).
+    async with aiohttp.ClientSession() as session:  # This creates an asynchronous context manager, initiating a session for HTTP requests.
+        async with session.get(url) as response:  # This asynchronously sends a GET request to the provided URL and waits for the response.
+            return await response.text()  # It waits for and returns the response text (HTML content, in most cases).
+
 
 async def main():
     try:
@@ -37,6 +49,7 @@ async def main():
         print('Error: ', e)
 
 asyncio.run(main())
+
 
 # Topic - 3. Concurrency with asyncio
 async def task_one():
@@ -58,6 +71,7 @@ async def task_three():
     print("Task Three is complete")
     return 'Task Three is ok'
 
+
 # Example 1 using asyncio.gather()
 async def main():
     try:
@@ -66,7 +80,7 @@ async def main():
             task_two(),
             task_three(),
             return_exceptions=True
-        ) # Gather result in list
+        )  # Gather result in list
     except Exception as e:
         print(f"Caught an exception: {e}")
     else:
@@ -75,12 +89,13 @@ async def main():
 print("----- Using asyncio.gather()-----")
 asyncio.run(main())
 
+
 # Example 2 using asyncio.wait()
 async def main():
-    tasks = [asyncio.create_task(task_one()), asyncio.create_task(task_two()), asyncio.create_task(task_three())] # Can't pass the task directly since python3.8. Direct task pass will deprecate
+    tasks = [asyncio.create_task(task_one()), asyncio.create_task(task_two()), asyncio.create_task(task_three())]  # Can't pass the task directly since python3.8. Direct task pass will deprecate
     done, pending = await asyncio.wait(
-        tasks, # coroutine objects
-        timeout=None, # Don't use if you want to complete all task without time limit. Timeout parameter to wait for a maximum of 1 second for each of the task to complete. If the timeout is reached, we catch the asyncio.exceptions.TimeoutError exception. If any of the task complete within the specified time, we will cancel the remaining tasks that are still pending.
+        tasks,  # coroutine objects
+        timeout=None,  # Don't use if you want to complete all task without time limit. Timeout parameter to wait for a maximum of 1 second for each of the task to complete. If the timeout is reached, we catch the asyncio.exceptions.TimeoutError exception. If any of the task complete within the specified time, we will cancel the remaining tasks that are still pending.
         # return_when=asyncio.FIRST_COMPLETED # Return when the first exception occurs
     )
 
@@ -103,6 +118,7 @@ except asyncio.exceptions.TimeoutError:
 except asyncio.exceptions.CancelledError:
     pass
 
+
 # Example 3 using asyncio.wait()
 async def fetch_url(url):
     try:
@@ -110,6 +126,7 @@ async def fetch_url(url):
         return await fetch(url)
     except Exception as e:
         raise ValueError(f"Error fetching {e}")
+
 
 async def main():
     urls = ["https://machine.dekkoisho.com", "http://test.test"]
@@ -161,21 +178,28 @@ Visit this for more: https://chat.openai.com/share/3b5092fb-786c-408b-96b1-2d970
 '''
 
 # Topic - 4. Parallelism with multiprocessing
-from multiprocessing import Pool, cpu_count, Queue, Manager, Process
 print("------multiprocessing example 1------")
+
+
 def calculate_square(x):
-    return  x*x
+    return x*x
+
 
 if __name__ == '__main__':
     with Pool(5) as pool:
-        print(pool.map(calculate_square, [1,2,3,4,5]))
+        print(pool.map(calculate_square, [1, 2, 3, 4, 5]))
+
 
 print("------multiprocessing example 2 - Pool Map()------")
+
+
 def multi_task_one():
     return 999999*99999*999999*999999
 
+
 def multi_task_two():
     return 999999*99999*999999*999999
+
 
 if __name__ == '__main__':
     tasks = [multi_task_one(), multi_task_two()]
@@ -196,9 +220,11 @@ if __name__ == '__main__':
 
 print("------multiprocessing example 2 - Pool Apply()------")
 
+
 # Function to calculate the square of a number
 def calculate_square(number):
     return number * number
+
 
 if __name__ == "__main__":
     pool = Pool(processes=4)
@@ -219,8 +245,10 @@ print("------multiprocessing.Queue() example 3 ------")
 Sharing data and communication between processes
 We have two processes: one that produces data and another that consumes the data using multiprocessing.Queue()
 '''
-import time
+
 # Function that runs in a separate process and raises an exception
+
+
 def worker():
     try:
         print("Worker process: Starting work...")
@@ -230,10 +258,13 @@ def worker():
         result = 1 / 0
     except Exception as e:
         print(f"Worker process: Exception raised: {str(e)}")
+
+
 def producer(q):
     for i in range(1, 6):
         q.put(f"Data {i}")
         print(f"Produced: Data {i}")
+
 
 def consumer(q):
     while True:
@@ -241,6 +272,7 @@ def consumer(q):
         if data is None:
             break
         print(f"Consumed: {data}")
+
 
 if __name__ == "__main__":
     q = Queue()
@@ -270,7 +302,7 @@ if __name__ == "__main__":
     worker_process.start()
     time.sleep(1)
     worker_process.terminate()
-    worker_process.join() # Use join() to get the reason of termination of that process
+    worker_process.join()  # Use join() to get the reason of termination of that process
 
     print("Worker process alive: ", worker_process.is_alive())
 
@@ -286,10 +318,13 @@ print("------multiprocessing.Manager() example 4 ------")
 '''
 Create a shared list that multiple process can modify
 '''
+
+
 # Function to append data to a shared list
 def append_data(shared_list, data):
     shared_list.append(data)
     print(f"Append: {data}")
+
 
 if __name__ == "__main__":
     with Manager() as manager:
@@ -297,7 +332,8 @@ if __name__ == "__main__":
 
         process1 = Process(target=append_data, args=(shared_list, "Data 1"))
         process2 = Process(target=append_data, args=(shared_list, "Data 2"))
-        #Start the processes
+
+        # Start the processes
         process1.start()
         process2.start()
 
@@ -347,13 +383,15 @@ Use case:
         datasets or computationally intensive tasks.
 '''
 
+
 # Topic - 5. Advanced asyncio
 async def read_large_file(file):
     while True:
         line = await file.readline()
         if not line:
             break
-        print("Line: ",line.decode().strip())
+        print("Line: ", line.decode().strip())
+
 
 async def main_():
     file = await asyncio.open('async_large_file.txt', mode='rb')
@@ -370,18 +408,20 @@ This is particularly useful for large files where you don’t want to block the 
 
 # Topic - 6: Real-World Async Applications
 print("------Real-World Async Applications------")
-import json
+
 
 async def fetch_and_process(url):
-    async with aiohttp.ClientSession() as session: # Initiates an async session for making HTTP requests.
-        async with session.get(url) as response: # Asynchronously sends a GET request to the URL and waits for the response.
+    async with aiohttp.ClientSession() as session:  # Initiates an async session for making HTTP requests.
+        async with session.get(url) as response:  # Asynchronously sends a GET request to the URL and waits for the response.
             data = await response.text()
             processed_data = json.loads(data)
             print(f"Data from {url}: {processed_data}")
 
+
 async def main__():
     urls = ['https://api.example.com/data1', 'https://api.example.com/data2']
     tasks = [fetch_and_process(url) for url in urls]
-    await asyncio.gather(*tasks) # Runs all tasks concurrently, not sequentially.
+    await asyncio.gather(*tasks)  # Runs all tasks concurrently, not sequentially.
+
 
 # asyncio.run(main__())

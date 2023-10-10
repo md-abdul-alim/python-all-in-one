@@ -10,18 +10,24 @@ from multiprocessing import Pool, cpu_count, Queue, Manager, Process
 """
 Asynchronous
 -----asyncio
----------~gather
+---------~Gather ::
 ---------------return all response including error response in one response. so can't cancel unsuccessful tasks.
----------~wait
+---------~Wait :: 
 ---------------return completed tasks and and pending tasks separately. so pending tasks can be canceled. 
 -----multiprocessing
-----------~pool
----------------~map
---------------------simple way to run worker process. can't sync between two process.
----------------~apply
---------------------simple way to run worker process. can't sync between two process.
-----------~process
---------------------more control over the processes. can sync data between two processes. also, if failed to complete any task, we can get error cause.
+----------~Pool :: simple way to run worker process. can't sync between two process.
+---------------~map :: 
+------------------------- used for parallel execution of a function on multiple input values.
+------------------------- takes an iterable as input like list and passed the function
+------------------------- return a list of results
+------------------------- return results according to the order of input
+---------------~apply :: 
+------------------------- used for single set of arguments in parallel. It doesn't operate on an iterable like map
+------------------------- take a single function and its arguments as input.
+------------------------- return a single result
+------------------------- no result order as this is a single set of arguments
+----------~Process :: more control over the processes. can sync data between two processes
+--------------------if failed to complete any task, we can get error cause.
 """
 
 
@@ -216,7 +222,7 @@ if __name__ == '__main__':
     pool.join()
 
     # Print the results
-    print(results)
+    print("Pool Map: ", results)
 
 print("------multiprocessing example 2 - Pool Apply()------")
 
@@ -233,6 +239,7 @@ if __name__ == "__main__":
 
     # Use pool.apply() to calculate squares in parallel
     results = [pool.apply(calculate_square, args=(num,)) for num in numbers]
+    print("Pool Apply: ", results)
 
     pool.close()
     pool.join()
@@ -240,7 +247,19 @@ if __name__ == "__main__":
     for num, result in zip(numbers, results):
         print(f"The square of {num} is {result}")
 
-print("------multiprocessing.Queue() example 3 ------")
+print("------multiprocessing example 3 - Pool Map() & Apply()------")
+
+if __name__ == "__main__":
+    with Pool(processes=2) as pool:
+        # Using pool.map() to square elements of an iterable
+        result_map = pool.map(calculate_square, [1, 2, 3, 4, 5])
+        print("pool.map() result:", result_map)
+
+        # Using pool.apply() to square a single value
+        result_apply = pool.apply(calculate_square, (11,))
+        print("pool.apply() result:", result_apply)
+
+print("------multiprocessing.Queue() example 4 ------")
 '''
 Sharing data and communication between processes
 We have two processes: one that produces data and another that consumes the data using multiprocessing.Queue()

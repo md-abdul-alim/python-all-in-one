@@ -1,4 +1,5 @@
 import scrapy
+from luluscraper.items import ProductItem
 
 
 class LuluspiderSpider(scrapy.Spider):
@@ -26,8 +27,14 @@ class LuluspiderSpider(scrapy.Spider):
 
     def parse_product_details(self, response):
 
-        yield {
-            'title': response.css('h1.product-name ::text').get(),
-            'price': response.css('div.price-tag div span span span small::text').get() + ' ' + response.css('div.price-tag div span span span::text').get(),
-        }
+        product_item = ProductItem()
+        product_item['title'] = response.css('h1.product-name ::text').get()
+        product_item['price'] = response.css('div.price-tag div span span span small::text').get() + ' ' + response.css('div.price-tag div span span span::text').get(),
+
+        yield product_item
+
+        # yield {
+        #     'title': response.css('h1.product-name ::text').get(),
+        #     'price': response.css('div.price-tag div span span span small::text').get() + ' ' + response.css('div.price-tag div span span span::text').get(),
+        # }
 

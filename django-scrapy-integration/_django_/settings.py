@@ -118,6 +118,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+DATA_UPLOAD_MAX_NUMBER_FIELDS=2000 # how much data will process from admin at a time. like want to delete 2000 row at a time. we can't delete 2001 row at a time. that's it.
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

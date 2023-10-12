@@ -4,6 +4,8 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
+from scrapy_djangoitem import DjangoItem
+# from product.models import Product
 
 
 class LuluscraperItem(scrapy.Item):
@@ -15,4 +17,8 @@ class LuluscraperItem(scrapy.Item):
 class ProductItem(scrapy.Item):
     title = scrapy.Field()
     price = scrapy.Field()
+
+
+# class DjangoScraperItem(DjangoItem):
+#     django_model = Product
 

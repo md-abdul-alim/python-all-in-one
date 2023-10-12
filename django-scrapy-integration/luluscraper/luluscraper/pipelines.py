@@ -35,7 +35,7 @@ class SaveProductPipeline:
         ## Create books table if none exists
         self.cur.execute(
             """
-                CREATE TABLE IF NOT EXISTS products
+                CREATE TABLE IF NOT EXISTS lulu_products
                 (
                     id int NOT NULL auto_increment,
                     title text,
@@ -48,7 +48,7 @@ class SaveProductPipeline:
     def process_item(self, item, spider):
         ## Define insert statement
         self.cur.execute(
-            """ INSERT INTO products 
+            """ INSERT INTO lulu_products 
             (
                 title,
                 price

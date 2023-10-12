@@ -16,17 +16,13 @@ env = environ.Env(DEBUG=(bool, False))
 # reading .env file
 env_file = os.path.join(BASE_DIR, ".env")
 environ.Env.read_env(env_file)
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-zy1r7$2hhwc9d_b59ma7$9itj#m9c=fsf-d1v0v$ga798dc2aj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -126,3 +122,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SPIDER_DIRECTORY = env('SPIDER_DIRECTORY')

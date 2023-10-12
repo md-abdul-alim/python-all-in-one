@@ -3,6 +3,26 @@ fetch('https://www.luluhypermarket.com/en-ae/electronics')
 sub_categories = response.css('section.recommended-for-you div.col-lg-2')
 len(sub_categories)
 sub_category = sub_categories[0]
+
 sub-cat-name = sub_category.css('div.col-lg-2 a div.img-caption::text').get()
 
 sub-cat-url = sub_category.css('div.col-lg-2 a').attrib['href']
+output: '/pages/televisions'
+--------------------------------
+products page:
+fetch('https://www.luluhypermarket.com/en-ae/pages/televisions')
+
+products = response.css('div.product-box')
+or
+products = response.css('div.product-img')
+len(products)
+product = products[0]
+product-url = product.css('a ::attr(href)').get()
+output: '/en-ae/sony-bravia-55-inches-4k-hdr-smart-google-tv-/p/2017082'
+
+-----------
+product details page:
+
+product_name = response.css('h1.product-name ::text').get()
+product_price = response.css('div.price-tag div span span span::text').get()
+currency_name = response.css('div.price-tag div span span span small::text').get()

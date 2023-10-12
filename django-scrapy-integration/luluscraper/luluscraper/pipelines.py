@@ -15,7 +15,7 @@ class LuluscraperPipeline:
 
         # Price data clean
         price_field = adapter.get('price')
-        adapter['price'] = price_field[0]
+        adapter['price'] = price_field[0]  # cleaning data from tuple
 
         return item
 

@@ -24,6 +24,9 @@ jedi==0.19.1
 jmespath==1.0.1
 lxml==4.9.3
 matplotlib-inline==0.1.6
+mysql==0.0.3
+mysql-connector-python==8.1.0
+mysqlclient==2.2.0
 packaging==23.2
 parsel==1.8.1
 parso==0.8.3
@@ -31,6 +34,7 @@ pexpect==4.8.0
 pickleshare==0.7.5
 prompt-toolkit==3.0.39
 Protego==0.3.0
+protobuf==4.21.12
 ptyprocess==0.7.0
 pure-eval==0.2.2
 pyasn1==0.5.0

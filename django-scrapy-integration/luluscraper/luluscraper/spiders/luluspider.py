@@ -1,5 +1,6 @@
 import scrapy
-from luluscraper.items import ProductItem
+# from luluscraper.items import ProductItem
+from luluscraper.items import ProductItem, DjangoScraperItem
 
 
 class LuluspiderSpider(scrapy.Spider):

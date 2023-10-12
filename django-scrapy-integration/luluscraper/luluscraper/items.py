@@ -1,12 +1,25 @@
-# Define here the models for your scraped items
-#
-# See documentation in:
+import environ
+import os
+import sys
+from pathlib import Path
+
+# import .env file
+env = environ.Env(DEBUG=(bool, False))
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+env_file = os.path.join(BASE_DIR, ".env")
+environ.Env.read_env(env_file)
+
+# import django settings
+sys.path.append(env('DJANGO_DIRECTORY'))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", '_django_.settings')
+import django
+django.setup()
+
+from product.models import Product
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
 from scrapy_djangoitem import DjangoItem
-# from product.models import Product
-
 
 class LuluscraperItem(scrapy.Item):
     # define the fields for your item here like:
@@ -19,6 +32,6 @@ class ProductItem(scrapy.Item):
     price = scrapy.Field()
 
 
-# class DjangoScraperItem(DjangoItem):
-#     django_model = Product
+class DjangoScraperItem(DjangoItem):
+    django_model = Product
 

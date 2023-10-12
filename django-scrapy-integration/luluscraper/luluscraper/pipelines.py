@@ -11,10 +11,16 @@ import mysql.connector
 
 class LuluscraperPipeline:
     def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+
+        # Price data clean
+        price_field = adapter.get('price')
+        adapter['price'] = price_field[0]
+
         return item
 
 
-class SaveToMySQLPipeline:
+class SaveProductPipeline:
     def __init__(self):
         self.conn = mysql.connector.connect(
             host='localhost',
@@ -54,7 +60,7 @@ class SaveToMySQLPipeline:
             """,
             (
                 str(item["title"]),
-                str(item["price"])
+                item["price"]
             )
         )
 

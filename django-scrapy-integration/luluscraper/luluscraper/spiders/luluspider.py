@@ -8,6 +8,7 @@ class LuluspiderSpider(scrapy.Spider):
     start_urls = ["https://www.luluhypermarket.com/en-ae/electronics"]
 
     def parse(self, response):
+        # Retrieve all electronics sub categories
         sub_categories = response.css('section.recommended-for-you div.col-lg-2')
 
         for sub_category in sub_categories:
@@ -17,6 +18,7 @@ class LuluspiderSpider(scrapy.Spider):
             yield response.follow(sub_category_url, callback=self.parse_product_page)
 
     def parse_product_page(self, response):
+        # Retrieve category wise products urls
         products = response.css('div.product-img')
 
         for product in products:
@@ -26,8 +28,9 @@ class LuluspiderSpider(scrapy.Spider):
             yield response.follow(product_url, callback=self.parse_product_details)
 
     def parse_product_details(self, response):
-
+        # Retrieve product wise details
         product_item = ProductItem()
+
         product_item['title'] = response.css('h1.product-name ::text').get()
         product_item['price'] = response.css('div.price-tag div span span span small::text').get() + ' ' + response.css('div.price-tag div span span span::text').get(),
 

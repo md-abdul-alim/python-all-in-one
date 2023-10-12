@@ -64,7 +64,7 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    "luluscraper.pipelines.LuluscraperPipeline": 300,
-   "luluscraper.pipelines.SaveToMySQLPipeline": 400,
+   "luluscraper.pipelines.SaveProductPipeline": 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

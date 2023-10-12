@@ -18,16 +18,16 @@ def run_scrapy_crawler(request):
             # }
             # return JsonResponse(response_data)
             response = HttpResponse(content_type='text/csv')
-            response['Content-Disposition'] = 'attachment; filename="data.csv"'
+            response['Content-Disposition'] = 'attachment; filename="lulu.csv"'
 
             # Create a CSV writer and write your data into the response.
             writer = csv.writer(response)
-            writer.writerow(['Id', 'Title', 'Price'])
+            writer.writerow(['Title', 'Price'])
 
             queryset = Product.objects.all()
             serializer = ProductSerializer(queryset, many=True)
             for i in serializer.data:
-                writer.writerow([i['id'], i['title'], i['price']])
+                writer.writerow([i['title'], i['price']])
 
             return response
 

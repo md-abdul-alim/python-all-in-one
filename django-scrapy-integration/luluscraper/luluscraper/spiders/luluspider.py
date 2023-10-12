@@ -1,7 +1,13 @@
 import scrapy
-# from luluscraper.items import ProductItem
-from luluscraper.items import ProductItem, DjangoScraperItem
+from threading import Thread
+from luluscraper.items import ProductItem, DjangoScraperItem, Product
 
+
+def save_product(title, price):
+    Product.objects.create(
+        title=title,
+        price=price,
+    )
 
 class LuluspiderSpider(scrapy.Spider):
     name = "luluspider"
@@ -29,11 +35,18 @@ class LuluspiderSpider(scrapy.Spider):
             yield response.follow(product_url, callback=self.parse_product_details)
 
     def parse_product_details(self, response):
-        # Retrieve product wise details
+        ## Retrieve product wise details
         product_item = ProductItem()
+        # product_item = DjangoScraperItem()
 
-        product_item['title'] = response.css('h1.product-name ::text').get()
-        product_item['price'] = response.css('div.price-tag div span span span small::text').get() + ' ' + response.css('div.price-tag div span span span::text').get(),
+        title = response.css('h1.product-name ::text').get()
+        price = response.css('div.price-tag div span span span small::text').get() + ' ' + response.css('div.price-tag div span span span::text').get()
+
+        Thread(target=save_product, args=(title, price)).start()
+
+        product_item['title'] = title
+        product_item['price'] = price
+
 
         yield product_item
 

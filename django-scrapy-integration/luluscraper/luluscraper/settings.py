@@ -62,7 +62,7 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    "luluscraper.pipelines.LuluscraperPipeline": 300,
-   "luluscraper.pipelines.SaveProductPipeline": 400,
+   # "luluscraper.pipelines.SaveProductPipeline": 400, # Direct database save without django model import
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

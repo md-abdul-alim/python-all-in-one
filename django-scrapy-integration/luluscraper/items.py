@@ -35,3 +35,12 @@ class ProductItem(scrapy.Item):
 class DjangoScraperItem(DjangoItem):
     django_model = Product
 
+
+def save_product(**kwargs):
+    try:
+        Product.objects.create(
+            title=kwargs['title'],
+            price=kwargs['price'],
+        )
+    except Exception as e:
+        raise e

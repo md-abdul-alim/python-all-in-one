@@ -1,16 +1,7 @@
 import scrapy
 from threading import Thread
-from luluscraper.items import ProductItem, DjangoScraperItem, Product
+from luluscraper.items import ProductItem, DjangoScraperItem, Product, save_product
 
-
-def save_product(title, price):
-    try:
-        Product.objects.create(
-            title=title,
-            price=price,
-        )
-    except Exception as e:
-        raise e
 
 class LuluspiderSpider(scrapy.Spider):
     name = "luluspider"
@@ -55,7 +46,7 @@ class LuluspiderSpider(scrapy.Spider):
         # yield django_product_item
 
         ## For now using thread for this error: django.core.exceptions.SynchronousOnlyOperation. Also, we can use async
-        yield Thread(target=save_product, args=(title, price)).start()
+        yield Thread(target=save_product, kwargs={"title": title, "price": price}).start()
 
         ## This part was for testing purpose. Checking data scrapping is ok or not.
         # yield {

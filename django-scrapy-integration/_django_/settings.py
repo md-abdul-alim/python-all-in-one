@@ -3,14 +3,14 @@ import os
 import sys
 import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 """
 This is for connecting scaper directory:
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(BASE_DIR, 'luluscraper'))
 """
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(BASE_DIR, 'luluscraper'))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# sys.path.insert(0, os.path.join(BASE_DIR, 'luluscraper'))
 
 env = environ.Env(DEBUG=(bool, False))
 # reading .env file
@@ -26,6 +26,11 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+NEW_APPS = [
+    'product',
+    'luluscraper',
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -33,9 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'product',
-    'luluscraper',
-]
+] + NEW_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

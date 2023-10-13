@@ -38,26 +38,28 @@ class LuluspiderSpider(scrapy.Spider):
             yield response.follow(product_url, callback=self.parse_product_details)
 
     def parse_product_details(self, response):
-        ## Retrieve product wise details
-        product_item = ProductItem()
-
-        ## For unknown case using DjangoItem package Django model saving is not working.
-        # product_item = DjangoScraperItem()
-
         title = response.css('h1.product-name ::text').get()
-        price = response.css('div.price-tag div span span span small::text').get() + ' ' + response.css('div.price-tag div span span span::text').get()
-
-        ## For now using thread for this error: django.core.exceptions.SynchronousOnlyOperation. Also, we can use async
-        Thread(target=save_product, args=(title, price)).start()
+        price = response.css('div.price-tag div span span span small::text').get() + ' ' + response.css(
+            'div.price-tag div span span span::text').get()
 
         ## Used this to save scrapping data in database direct in django created product model using scrapy pipelines. Uncomment the scrapy settings item pipelines to make this work.
+        # product_item = ProductItem()
         # product_item['title'] = title
         # product_item['price'] = price
         # yield product_item
 
+        # For unknown case using DjangoItem package Django model saving is not working.
+        # django_product_item = DjangoScraperItem()
+        # django_product_item['title'] = title
+        # django_product_item['price'] = price
+        # yield django_product_item
+
+        ## For now using thread for this error: django.core.exceptions.SynchronousOnlyOperation. Also, we can use async
+        yield Thread(target=save_product, args=(title, price)).start()
+
         ## This part was for testing purpose. Checking data scrapping is ok or not.
         # yield {
-        #     'title': response.css('h1.product-name ::text').get(),
-        #     'price': response.css('div.price-tag div span span span small::text').get() + ' ' + response.css('div.price-tag div span span span::text').get(),
+        #     'title': title,
+        #     'price': price,
         # }
 

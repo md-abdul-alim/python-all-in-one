@@ -1,11 +1,12 @@
 import subprocess
 from django.conf import settings
 from django.http import JsonResponse, HttpResponse
+from django.views.decorators.http import require_http_methods
 from .models import Product
 from .serializers import ProductSerializer
 import csv
 
-
+@require_http_methods(["GET"])
 def run_scrapy_crawler(request):
     spider_name = 'luluspider'
 

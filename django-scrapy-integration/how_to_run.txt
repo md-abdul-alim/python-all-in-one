@@ -1,0 +1,18 @@
+1. Create a virtual environment -> python3 -m venv venv
+2. Active the virtual environment -> source venv/bin/activate
+3. Install dependencies: pip install -r requirements.txt
+3. Update the .env file
+	0. For getting django & spider directory 
+	i. For DJANGO_DIRECTORY : go to (lulu-scrapper-demo) folder. open terminal. write pwd command. copy the path and past it to .env file -> DJANGO_DIRECTORY
+	2. For SPIDER_DIRECTORY : go to lulu-scrapper-demo/luluscraper/spiders folder. open terminal. write pwd command. copy the path and past it to .env file -> SPIDER_DIRECTORY
+	3. Create database Update database credientials.
+4. Now run the migrations: python manage.py migrate
+5. Create super user (though it is not necessary now): python manage.py createsuperuser
+6. Run the django project: python manage.py runserver
+7. Now open any browser and call this api: http://127.0.0.1:8000/api/lulu/
+	0. This api will crawl the data activating by spiders and after crawlling it'll download a lulu.csv file
+8. Also, if you just want to crawl the data and save in database run this command: python manage.py lulucrawl
+	0. This will crawl data and save data in database.
+
+That's all.
+Have a good day.

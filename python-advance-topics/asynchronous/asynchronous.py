@@ -38,6 +38,7 @@ async def main():
     print("World")
 
 asyncio.run(main())
+# --------
 
 
 # Topic - 2. asyncio with aiohttp
@@ -55,6 +56,7 @@ async def main():
         print('Error: ', e)
 
 asyncio.run(main())
+# ------
 
 
 # Topic - 3. Concurrency with asyncio
@@ -182,7 +184,7 @@ From the above small test case for asyncio.gather() and asyncio.wait() get bello
     
 Visit this for more: https://chat.openai.com/share/3b5092fb-786c-408b-96b1-2d970baa79e9
 '''
-
+# -----
 # Topic - 4. Parallelism with multiprocessing
 print("------multiprocessing example 1------")
 

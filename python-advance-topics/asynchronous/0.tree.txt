@@ -1,0 +1,22 @@
+"""
+Asynchronous
+-----asyncio
+---------~Gather ::
+---------------return all response including error response in one response. so can't cancel unsuccessful tasks.
+---------~Wait ::
+---------------return completed tasks and and pending tasks separately. so pending tasks can be canceled.
+-----multiprocessing
+----------~Pool :: simple way to run worker process. can't sync between two process.
+---------------~map ::
+------------------------- used for parallel execution of a function on multiple input values.
+------------------------- takes an iterable as input like list and passed the function
+------------------------- return a list of results
+------------------------- return results according to the order of input
+---------------~apply ::
+------------------------- used for single set of arguments in parallel. It doesn't operate on an iterable like map
+------------------------- take a single function and its arguments as input.
+------------------------- return a single result
+------------------------- no result order as this is a single set of arguments
+----------~Process :: more control over the processes. can sync data between two processes
+--------------------if failed to complete any task, we can get error cause.
+"""

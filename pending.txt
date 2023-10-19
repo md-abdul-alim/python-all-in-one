@@ -22,3 +22,16 @@ JIT compilation
 -----
 how to sort dictionary
 crown job. celery, chanel
+
+----------
+1.write a function that removes duplicates from a list
+2.reverse a lindedlist
+3.If you were asked to write a text editor from scratch. Now, you are tasked with builidng a syntax highlihter. what
+would you need to consider when building such a feature? and how would you try implementing it?
+4. What the problem here
+    users = User.objects.all()
+    for user in users:
+        posts = user.posts.all()
+
+Follow: https://chat.openai.com/c/1d381e8b-ac1e-44a9-8c23-86df70e00c5f
+--------------------

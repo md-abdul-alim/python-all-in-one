@@ -28,7 +28,11 @@
                         modified and accessed via the class method
 --------------------Class method as Alternative Constructor: example bellow
 --------------------Access or modify class-level attributes: example bellow
---------------------Factory Methods: allows to create class instacess with additional logic, validation or data manifulation
+--------------------Factory Methods: allows to create class instance with additional logic, validation or data manipulation
+--------------------Singleton Pattern: Implement the Singleton patter, to ensuring that a class has only one instance throughout the program.
+--------------------Caching and Memoization
+--------------------Database Connection Pooling: It involves dealing with database connections , thread safety, and resource management.
+--------------------Creating Helper Function
 ----------@property
 ----------@abstractmethod : from abc import abstractmethod
 ----------@lru_cache : from functools import lru_cache
@@ -121,6 +125,29 @@ print(f"Area using static method: {area_static}")
 # Call non-static method directly by Class. Which is not a recommended practice
 area_non_static = Rectangle.calculate_area_non_static_call_test(rect_instance, 2)
 print(f"Area using non-static method by directly Class call: {area_non_static}")
+
+print("----------Built in decorator @staticmethod ~~~ Date Validation using @staticmethod----------")
+
+
+class DateUtils:
+    @staticmethod
+    def is_valid_date(year, month, day):
+        try:
+            from datetime import datetime
+            datetime(year, month, day)
+            return True
+        except ValueError:
+            return False
+
+# Using the static method to validate a date
+year = 2023
+month = 2
+day = 29
+
+if DateUtils.is_valid_date(year, month, day):
+    print(f"{year}-{month}-{day} is a valid date.")
+else:
+    print(f"{year}-{month}-{day} is not a valid date.")
 
 
 #  @classmethod
@@ -247,3 +274,123 @@ product2 = Product.create_product_with_discount("Headphones", 49.99, 20)  # 20% 
 # Display product information
 product1.display_info()
 product2.display_info()
+
+print("--------Built in decorator @classmethod ~~~ Singleton Pattern using @classmethod--------")
+
+
+class Singleton:
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super(Singleton, cls).__new__(cls)
+        return cls._instance
+
+instance1 = Singleton()
+instance2 = Singleton()
+
+print(instance1 is instance2) # This will be True
+
+print("--------Built in decorator @classmethod ~~~ Caching and Memoization using @classmethod--------")
+
+
+class MathOperations:
+    _cache = {}
+
+    @classmethod
+    def square(cls, num):
+        if num not in cls._cache:
+            print(f'Print num once: {num}')
+            result = num * num
+            cls._cache[num] = result
+        return cls._cache
+
+print(MathOperations.square(4)) # Calculates and caches 16
+print(MathOperations.square(4)) # Returns cached result 16
+
+print("--------Built in decorator @classmethod ~~~ Database Connection Pooling using @classmethod--------")
+
+
+import threading
+
+class DatabaseConnectionPool:
+    _connection_pool = []
+    _max_connections = 5
+    _lock = threading.Lock()
+
+    @classmethod
+    def get_connection(cls):
+        # A lock is used to ensure thread safety
+        with cls._lock:
+            if not cls._connection_pool:
+                if len(cls._connection_pool) < cls._max_connections:
+                    # Simulate creating a new database connection
+                    connection = f"Connection{len(cls._connection_pool) + 1}"
+                    cls._connection_pool.append(connection)
+                    print(f"Created a new connection: {connection}")
+                else:
+                    print("Connection limit reached. Waiting for a connection to become available.")
+                    cls._lock.release()
+                    # Simulate waiting for a connection to become available
+                    while not cls._connection_pool:
+                        pass
+                    cls._lock.acquire()
+
+            # Simulate returning a database connection from the pool
+            connection = cls._connection_pool.pop()
+            print(f"Got a connection: {connection}")
+            return connection
+
+    @classmethod
+    def release_connection(cls, connection):
+        with cls._lock:
+            # Simulate releasing a connection back to the pool
+            cls._connection_pool.append(connection)
+            print(f"Released connection: {connection}")
+
+# Simulate multiple threads requesting and releasing connections
+def simulate_database_operations():
+    for _ in range(3):
+        connection = DatabaseConnectionPool.get_connection()
+        # Simulate performing database operations
+        DatabaseConnectionPool.release_connection(connection)
+
+threads = []
+for _ in range(3):
+    thread = threading.Thread(target=simulate_database_operations)
+    threads.append(thread)
+
+for thread in threads:
+    thread.start()
+
+for thread in threads:
+    thread.join()
+
+print("--------Built in decorator @classmethod ~~~ Create Helper Function using @classmethod--------")
+
+
+class StringUtils:
+    @classmethod
+    def reverse_string(cls, text):
+        return text[::-1]
+
+    @classmethod
+    def count_vowels(cls, text):
+        vowels = "aeiouAEIOU"
+        return sum(1 for char in text if char in vowels)
+
+    @classmethod
+    def is_palindrome(cls, text):
+        cleaned_text = ''.join(filter(str.isalnum, text)).lower()
+        return cleaned_text == cleaned_text[::-1]
+
+# Using the class methods to perform string operations
+text1 = "hello world"
+reversed_text = StringUtils.reverse_string(text1)
+vowel_count = StringUtils.count_vowels(text1)
+is_palindrome = StringUtils.is_palindrome("A man, a plan, a canal, Panama")
+
+print(f"Original Text: {text1}")
+print(f"Reversed Text: {reversed_text}")
+print(f"Vowel Count: {vowel_count}")
+print(f"Is Palindrome: {is_palindrome}")

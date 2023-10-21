@@ -34,6 +34,9 @@
 --------------------Database Connection Pooling: It involves dealing with database connections , thread safety, and resource management.
 --------------------Creating Helper Function
 ----------@property
+--------------------Used to create getter and setter methods for class attributes.
+--------------------Add validation or custom behavior when getting or setting an attribute.
+--------------------Data Integrity: Prevent invalid values from being assigned to attributes
 ----------@abstractmethod : from abc import abstractmethod
 ----------@lru_cache : from functools import lru_cache
 ----------@wraps : from functools import wraps
@@ -394,3 +397,40 @@ print(f"Original Text: {text1}")
 print(f"Reversed Text: {reversed_text}")
 print(f"Vowel Count: {vowel_count}")
 print(f"Is Palindrome: {is_palindrome}")
+
+print("----------Built in decorator @property----------")
+
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius  # Private attribute with underscore
+
+    @property
+    def radius(self):
+        """Getter method for the radius."""
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):
+        """Setter method for the radius."""
+        if value < 0:
+            raise ValueError("Radius cannot be negative")
+        self._radius = value
+
+
+    @property
+    def area(self):
+        """Calculate the area of the circle."""
+        return 3.14159 * self._radius ** 2
+
+# Create a Circle object
+circle = Circle(5)
+
+# Access the radius using the property
+print("Radius:", circle.radius)
+
+# Access the area using the property
+print("Area:", circle.area)
+
+# Try to set an invalid radius
+# circle.radius = -3  # This will raise a ValueError
+

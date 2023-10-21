@@ -35,3 +35,15 @@ would you need to consider when building such a feature? and how would you try i
 
 Follow: https://chat.openai.com/c/1d381e8b-ac1e-44a9-8c23-86df70e00c5f
 --------------------
+is python high / low level language?
+=> python is a high-level language, because of it is a high level design, it is more abstract and user-friendly.
+This abstraction hides many low-level details of computure hardware and memory management.
+Becuase of high level nature it allows developers to write come more quickly.
+
+is python compiler or interpreter language?
+=> python is an interpreted language. That means python code is excuted directly by the python interpreter without need
+for other seperate compilation step.
+=> Python interpreter reads and executes the code line by line by translating it into machine code on the fly.
+=> python interpreted languages is slower in execution compared to compiled languages since they don't produce native
+machine code optimized for a specific platform.
+----------------------

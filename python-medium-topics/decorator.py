@@ -1,10 +1,10 @@
 """
------Decorator is a design pattern and feature
------This allows us to modify or extend the behavior of function main_function without changing main_function code.
+-----Decorator is a design pattern and feature \n
+-----This allows us to modify or extend the behavior of function main_function without changing main_function code. \n
 -----Decorator is a higher-order function because this can take another function/method as argument and return a new
-        function that typically enhances/alters the behavior of the original function.
------Use case:
-----------Logging: Adding logging information before and after a function call.
+        function that typically enhances/alters the behavior of the original function. \n
+-----Use case: \n
+----------Logging: Adding logging information before and after a function call. \n
 ----------Authentication and Authorization: Checking user permissions or authentication status before allowing access.
 ----------Timing and Profiling: Measuring the execution time of functions.
 ----------Caching: Storing the result of function calls to improve performance.
@@ -38,14 +38,39 @@
 --------------------Add validation or custom behavior when getting or setting an attribute.
 --------------------Data Integrity: Prevent invalid values from being assigned to attributes
 ----------@abstractmethod : from abc import abstractmethod
+--------------------Enforcing Method Implementation
+--------------------Polymorphism: Using @abstractmethod, we ensure that all concrete subclasses of Animal must provide an implementation of the speak method, maintaining a common interface for polymorphism.
+--------------------Like Multiple Payment system follow same payment gateway implementation.
 ----------@lru_cache : from functools import lru_cache
+--------------------is particularly useful for optimizing functions with expensive computations or I/O operations,
+                        where results can be reused frequently for the same inputs. It's commonly used for memoization,
+                        dynamic programming, and recursive algorithms.
+--------------------Very important for cacheing, for same arguments
+--------------------This is used to cache the results of function, which help improve the performance of that function, espeically when it's called with the same arguments multiple times.
+--------------------Like in fibonacci call @lru_cache can cache the result of `fibonacci(10)` and
+                        later if call `fibonacci(20)` be much faster because the function will look up the result in the cache instead of recalculating it.
+                        This can significantly improve the performance of that involve expensive calculations.
 ----------@wraps : from functools import wraps
+--------------------`@wraps` decorator is commonly used in conjuction with other decorator to preserve the original
+                    function's metadata such as its `name, docstring and parameter information`.
 ----------@contextmanager : from contextlib import contextmanager
+--------------------@contextmanager decorator in Python is used to create context managers,
+                        which are helpful for managing resources and setting up and cleaning up a context
+                        before and after a block of code is executed. Context managers are commonly used in scenarios
+                        where you need to ensure proper resource handling, cleaning up, closing network connections,
+                        such as file operations, database connections, locking, and more
 ----------@asynccontextmanager : from contextlib import asynccontextmanager
 ----------@dataclass : from dataclasses import dataclass
+--------------------This automatically generates an
+                        `__init__()`: initialize the object.
+                        `__repr__()`: provide a string representation of the object.
+                        `__eq__()`: compare instances for equality.
+--------------------We can access these methods without having to write them manually.
+--------------------Help to reduce boilerplate code
 """
 
 print("----------Basic decorator----------")
+from functools import wraps
 
 
 def greeting_decorator(main_function):
@@ -71,6 +96,7 @@ print("----------Decorator with higher order function----------")
 
 def repeat_n_times(n):
     def decorator(func):
+        @wraps(func)
         def wrapper(*args, **kwargs):
             for _ in range(n):
                 func(*args, **kwargs)
@@ -80,10 +106,17 @@ def repeat_n_times(n):
 
 @repeat_n_times(2)
 def greet(name):
+    """
+        This is a docstring for the greet function.
+    """
     print(f"Hello, {name}!")
 
 
 greet("Alim")
+
+# Accessing metadata of the decorated function
+print("Function Name:", greet.__name__)  # Output: "Function Name: greet"
+print("Docstring:", greet.__doc__)
 
 # repeat_n_times(3)(greet)('Milon')
 '''
@@ -289,6 +322,7 @@ class Singleton:
             cls._instance = super(Singleton, cls).__new__(cls)
         return cls._instance
 
+
 instance1 = Singleton()
 instance2 = Singleton()
 
@@ -308,13 +342,13 @@ class MathOperations:
             cls._cache[num] = result
         return cls._cache
 
+
 print(MathOperations.square(4)) # Calculates and caches 16
 print(MathOperations.square(4)) # Returns cached result 16
 
 print("--------Built in decorator @classmethod ~~~ Database Connection Pooling using @classmethod--------")
-
-
 import threading
+
 
 class DatabaseConnectionPool:
     _connection_pool = []
@@ -351,12 +385,14 @@ class DatabaseConnectionPool:
             cls._connection_pool.append(connection)
             print(f"Released connection: {connection}")
 
+
 # Simulate multiple threads requesting and releasing connections
 def simulate_database_operations():
     for _ in range(3):
         connection = DatabaseConnectionPool.get_connection()
         # Simulate performing database operations
         DatabaseConnectionPool.release_connection(connection)
+
 
 threads = []
 for _ in range(3):
@@ -387,6 +423,7 @@ class StringUtils:
         cleaned_text = ''.join(filter(str.isalnum, text)).lower()
         return cleaned_text == cleaned_text[::-1]
 
+
 # Using the class methods to perform string operations
 text1 = "hello world"
 reversed_text = StringUtils.reverse_string(text1)
@@ -399,6 +436,7 @@ print(f"Vowel Count: {vowel_count}")
 print(f"Is Palindrome: {is_palindrome}")
 
 print("----------Built in decorator @property----------")
+
 
 class Circle:
     def __init__(self, radius):
@@ -416,11 +454,11 @@ class Circle:
             raise ValueError("Radius cannot be negative")
         self._radius = value
 
-
     @property
     def area(self):
         """Calculate the area of the circle."""
         return 3.14159 * self._radius ** 2
+
 
 # Create a Circle object
 circle = Circle(5)
@@ -434,3 +472,302 @@ print("Area:", circle.area)
 # Try to set an invalid radius
 # circle.radius = -3  # This will raise a ValueError
 
+print("----------Built in decorator @abstractmethod----------")
+from abc import ABC, abstractmethod
+
+
+# Define an abstract class using ABC
+class Shape(ABC):
+
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+
+# Create a concrete subclass of Shape
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+    def perimeter(self):
+        return 2 * 3.14 * self.radius
+
+
+circle = Circle(5)
+print("Circle Area: ", circle.area())
+print("Circle Perimeter: ", circle.perimeter())
+
+
+print("----------Built in decorator Payment Gateway example @abstractmethod----------")
+
+
+class PaymentGateway(ABC):
+
+    @abstractmethod
+    def process_payment(self, amount):
+        pass
+
+
+class PayPal(PaymentGateway):
+
+    def process_payment(self, amount):
+        # Implement PayPal-specific payment processing logic here
+        print(f"Processing ${amount} via PayPal")
+
+
+class Stripe(PaymentGateway):
+
+    def process_payment(self, amount):
+        # Implement Stripe-specific payment processing logic here
+        print(f"Processing ${amount} via Stripe")
+
+
+print("----------Built in decorator Polymorphism example @abstractmethod----------")
+
+
+# Define an abstract class with an abstract method
+class Animal(ABC):
+
+    @abstractmethod
+    def speak(self):
+        pass
+
+
+# Create concrete subclasses implementing the 'speak' method
+class Dog(Animal):
+
+    def speak(self):
+        return "Woof!"
+
+
+class Cat(Animal):
+
+    def speak(self):
+        return "Meow!"
+
+
+class Cow(Animal):
+
+    def speak(self):
+        return "Moo!"
+
+
+# Function that works with any object derived from the Animal class
+def make_animal_speak(animal):
+    if isinstance(animal, Animal):
+        print(f"The animal says: {animal.speak()}")
+
+
+# Create instances of different animal classes
+dog = Dog()
+cat = Cat()
+cow = Cow()
+
+# Call the function with different animal objects
+make_animal_speak(dog)  # Output: "The animal says: Woof!"
+make_animal_speak(cat)  # Output: "The animal says: Meow!"
+make_animal_speak(cow)  # Output: "The animal says: Moo!"
+
+
+print("----------Built in decorator @lru_cache----------")
+from functools import lru_cache
+
+
+# Define a function that computes Fibonacci numbers recursively
+# maxsize=None argument means that the cache can grow indefinitely, caching all previously computed results.
+
+'''
+The first call to fibonacci(10) computes the 10th Fibonacci number, and the result is cached. 
+Subsequent calls to fibonacci(10) or even a larger number like fibonacci(20) will be much faster 
+because the function will look up the result in the cache instead of recalculating it. 
+This can significantly improve the performance of functions that involve expensive calculations.
+'''
+
+
+@lru_cache(maxsize=None, typed=True)  # The decorator with caching enabled
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+# Calculate the 10th Fibonacci number
+result = fibonacci(10)
+print(result)  # Output: 55
+
+# The function has cached the intermediate results, making subsequent calls faster
+result = fibonacci(20)
+print(result)  # Output: 6765
+print("----------Built in decorator @lru_cache complex example 1----------")
+
+# Calculate and print the Fibonacci numbers for various values of n
+for n in range(1, 21):
+    result = fibonacci(n)
+    print(f"Fibonacci 1 ({n}) = {result}")
+
+for n in range(22, 33):
+    result = fibonacci(n)
+    print(f"Fibonacci 2 ({n}) = {result}")
+# Print the cache statistics
+print(f"Cache info: {fibonacci.cache_info()}")
+fibonacci.cache_clear()
+print(f"After Cache info clear: {fibonacci.cache_info()}")
+
+"""
+cache_info(hits, misses, maxsize, currsize):
+    ~ This cache_info return 4 parameters with the statistics result of the cached function. It's help to understand the behavior and performance of the cached function.
+    ~ hits: This represents the number of times a cached result was successfully retrieved from the cache. When a function is called with arguments that have been previously computed and cached, it's considered a "hit" because the function didn't need to recompute the result; instead, it fetched the cached value.
+    ~ misses: This represents the number of times the function was called with arguments that were not found in the cache, leading to a recalculation of the result. A "miss" occurs when the function needs to compute a result for arguments that haven't been seen before or when the cache has reached its maximum size and older results need to be removed to make space for new ones.
+    ~ maxsize: How much results it will cached. Set `None`, cache will grow indefinitely as new results are cached.
+    ~ Typed: Not mandatory parameter. This create separate caches for different argument types.
+cache_clear():
+    ~ To clear cache result if there is any errors.
+Decorator Order: Decorator are applied in the order they are listed. So any caching should be the last step.
+Thread Safety: lru_cache is not thread-safe. For thread-safety use third party `cachetools`.
+Function Immutability: The function being cached should be 'hashable', meaning it's arguments must be immutable or hashable data types. This is because the cache uses a dictionary to store results and dictionary keys must be hashable.
+"""
+
+print("----------Built in decorator @contextmanager----------")
+
+from contextlib import contextmanager, asynccontextmanager
+import time
+
+
+@contextmanager
+def timing_context():
+    start_time = time.time()
+    yield
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Time taken: {elapsed_time:.4f} seconds")
+
+
+# Using the timing_context
+with timing_context():
+    # Code block for which we want to measure execution time
+    for _ in range(1000000):
+        pass
+
+# The timing_context will automatically measure and print the time taken
+print("----------Built in decorator @contextmanager File I/O----------")
+
+
+def file_manager(filename, mode):
+    file = open(filename, mode)
+    yield file
+    file.close()
+
+
+# with file_manager("context_manager.txt", "w") as file:
+#     file.write("Context Manager!")
+# The file is automatically closed when the block exits.
+
+print("----------Built in decorator @contextmanager Database Connections----------")
+
+
+import sqlite3
+
+
+@contextmanager
+def database_connection(db_file):
+    connection = sqlite3.connect(db_file)
+    yield connection
+    connection.close()
+
+
+# with database_connection("pos.db") as conn:
+#     cursor = conn.cursor()
+#     cursor.execute("SELECT * FROM products")
+# The database connection is automatically closed when the block exits.
+"""
+    Managing database connections and transactions.
+    Ensuring that resources are properly released after database operations.
+"""
+
+print("----------Built in decorator @contextmanager Locking and Synchronization----------")
+import threading
+
+lock = threading.Lock()
+
+
+@contextmanager
+def synchronized():
+    lock.acquire()
+    try:
+        yield
+    finally:
+        lock.release()
+
+
+with synchronized():
+    # Critical section where only one thread can execute at a time.
+    pass
+# The lock is automatically released when the block exits.
+
+
+"""
+    Managing locks to control access to shared resources.
+    Ensuring that locks are acquired and released correctly.
+"""
+
+print("----------Built in decorator @asynccontextmanager----------")
+
+# import asyncio
+# import aiofiles
+#
+#
+# # Replace these with your actual resource management functions
+# async def acquire_resource(filename):
+#     # Open a file for writing asynchronously
+#     async with aiofiles.open(filename, mode='w') as file:
+#         yield file
+#
+#
+# async def release_resource(file):
+#     # Close the file when we're done with it
+#     await file.close()
+#
+#
+# @asynccontextmanager
+# async def my_async_context_manager(filename):
+#     file = await acquire_resource(filename)
+#     try:
+#         yield file
+#     finally:
+#         await release_resource(file)
+#
+# # Usage of the asynchronous context manager
+#
+#
+# async def some_async_function():
+#     async with my_async_context_manager("example.txt") as file:
+#         await file.write("Hello, world!")
+#
+# # Ensure to replace acquire_resource and release_resource with your actual resource management functions.
+#
+# # Run the event loop to execute the async code
+# asyncio.run(some_async_function())
+
+
+print("----------Built in decorator @dataclass----------")
+from dataclasses import dataclass, field
+
+
+@dataclass
+class Point:
+    x: int
+    y: int
+
+
+p1 = Point(1, 2)
+p2 = Point(1, 2)
+
+print(p1 == p2)  # This will print True because the objects have the same attributes.

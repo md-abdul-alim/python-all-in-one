@@ -15,7 +15,7 @@ filter
 reduce
 ---
 performance optimization:
-Profiling. like cProfile
+Profiling. like cProfile, line_profiler
 identifying bottleneck
 memoization
 JIT compilation

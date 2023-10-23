@@ -1,16 +1,12 @@
 """
+List of decorators:: https://wiki.python.org/moin/Decorators
+-----Decorator is a powerfull way to modify or enhance the behavior of function or method.
 -----Decorator is a design pattern and feature \n
 -----This allows us to modify or extend the behavior of function main_function without changing main_function code. \n
 -----Decorator is a higher-order function because this can take another function/method as argument and return a new
         function that typically enhances/alters the behavior of the original function. \n
------Use case: \n
-----------Logging: Adding logging information before and after a function call. \n
-----------Authentication and Authorization: Checking user permissions or authentication status before allowing access.
-----------Timing and Profiling: Measuring the execution time of functions.
-----------Caching: Storing the result of function calls to improve performance.
-----------Route Handling: Directing HTTP requests to the appropriate functions
 -----Built-in decorators:
-----------@staticmethod
+----------@staticmethod :: Defines methods without self handle
 --------------------Doesn't have access to instance-specific data (attributes). Static method can't access self.
 --------------------It can only access and manipulate data that is passed as arguments or is defined within the method itself
 --------------------Static method is directly associated with the class not with the instance.
@@ -23,7 +19,7 @@
 --------------------Note:
 --------------------~ Static method makes it explicit that a method is designed to used in class-wide context,
                             which can help prevent accidental use in an instance-specific context.
-----------@classmethod
+----------@classmethod :: Use cls instead of self
 --------------------Class method can share its own attributes data among all the instances of the class, which can be
                         modified and accessed via the class method
 --------------------Class method as Alternative Constructor: example bellow
@@ -33,15 +29,16 @@
 --------------------Caching and Memoization
 --------------------Database Connection Pooling: It involves dealing with database connections , thread safety, and resource management.
 --------------------Creating Helper Function
-----------@property
+----------@property :: Turn function into property accessor, also: @property.setter
 --------------------Used to create getter and setter methods for class attributes.
 --------------------Add validation or custom behavior when getting or setting an attribute.
 --------------------Data Integrity: Prevent invalid values from being assigned to attributes
+-----Other libraries decorators:
 ----------@abstractmethod : from abc import abstractmethod
 --------------------Enforcing Method Implementation
 --------------------Polymorphism: Using @abstractmethod, we ensure that all concrete subclasses of Animal must provide an implementation of the speak method, maintaining a common interface for polymorphism.
 --------------------Like Multiple Payment system follow same payment gateway implementation.
-----------@lru_cache : from functools import lru_cache
+----------@functools.lru_cache :: wrap computationally expensive functions
 --------------------is particularly useful for optimizing functions with expensive computations or I/O operations,
                         where results can be reused frequently for the same inputs. It's commonly used for memoization,
                         dynamic programming, and recursive algorithms.
@@ -50,30 +47,37 @@
 --------------------Like in fibonacci call @lru_cache can cache the result of `fibonacci(10)` and
                         later if call `fibonacci(20)` be much faster because the function will look up the result in the cache instead of recalculating it.
                         This can significantly improve the performance of that involve expensive calculations.
-----------@wraps : from functools import wraps
+----------@functools.wraps ::
 --------------------`@wraps` decorator is commonly used in conjuction with other decorator to preserve the original
                     function's metadata such as its `name, docstring and parameter information`.
-----------@contextmanager : from contextlib import contextmanager
+----------@contextlib.contextmanager :: Uses generator protocol `yield` to turn function into with-able context manager.
 --------------------@contextmanager decorator in Python is used to create context managers,
                         which are helpful for managing resources and setting up and cleaning up a context
                         before and after a block of code is executed. Context managers are commonly used in scenarios
                         where you need to ensure proper resource handling, cleaning up, closing network connections,
                         such as file operations, database connections, locking, and more
 ----------@asynccontextmanager : from contextlib import asynccontextmanager
-----------@dataclass : from dataclasses import dataclass
+----------@dataclasses.dataclass ::
 --------------------This automatically generates an
 ------------------------------`__init__()`: initialize the object.
 ------------------------------`__repr__()`: provide a string representation of the object.
 ------------------------------`__eq__()`: compare instances for equality. \n
 --------------------Dataclass decorator parameter
-------------------------------order=True: This generates ordering methods
------------------------------------__lt__(),
------------------------------------__le__(),
------------------------------------__gt__(),
+------------------------------order=True: This generates ordering methods \n
+-----------------------------------__lt__(), \n
+-----------------------------------__le__(), \n
+-----------------------------------__gt__(), \n
 -----------------------------------__ge__() based on the attributes, allowing ou to compare instances. \n
 ------------------------------frozen=True: This makes instances of the class immutable, which means you cannot change their attributes after creation.
 --------------------We can access these methods without having to write them manually. \n
 --------------------Help to reduce boilerplate code \n
+-----Custom decorators: \n
+----------Logging: means of tracking events that happen when some program runs.Adding logging information before and after a function call. \n
+----------Authentication: User login check
+----------Authorization: User permission checking before allowing access.
+----------Profiling: allows us to measure the execution time of functions and methods.
+----------Caching: Storing the result of function calls to improve performance. Avoid recomputing results for the same function inputs
+----------Route Handling: Directing HTTP requests to the appropriate functions
 """
 
 print("----------Basic decorator----------")
@@ -799,6 +803,7 @@ class Student:
         else:
             return None
 
+
 # Creating a student with default grades (an empty list).
 student1 = Student("John", "Doe", 12345, 1)
 student2 = Student("Jane", "Smith", 54321, 2)
@@ -820,3 +825,170 @@ try:
 except FrozenInstanceError as e:
     print(f"Error: {e}")
 
+print('----------logging using decorator---------------')
+import logging
+import time
+
+# Configure the logging settings
+logging.basicConfig(filename='decorator-logger.log', level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+
+# Define a decorator for logging execution time
+def log_execution_time(func):
+    def wrapper(*args, **kwargs):
+        logging.info(f"Calling {func.__name__} with args: {args}, kwargs: {kwargs}")
+
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+
+        logging.info(f"{func.__name__} returned: {result}")
+
+        elapsed_time = end_time - start_time
+
+        logging.info(f"{func.__name__} took {elapsed_time:.4f} seconds to execute")
+        return result
+    return wrapper
+
+
+# Apply the decorator to a function
+@log_execution_time
+def slow_function(x, y):
+    # Simulate a slow operation
+    time.sleep(1)
+    return x + y
+
+
+# Apply the decorator to another function
+@log_execution_time
+def fast_function():
+    # Simulate a fast operation
+    pass
+
+
+# Test the decorated functions
+slow_function(66, 34)
+fast_function()
+
+print('----------Authentication using decorator---------------')
+
+# from django.contrib.auth.decorators import login_required
+# from django.shortcuts import HttpResponse
+# from django.http import HttpResponseForbidden
+# from django.shortcuts import render
+
+# You can use Django's built-in `login_required` decorator as an authentication decorator
+# def authentication_required(func):
+#     def wrapper(request, *args, **kwargs):
+#         if request.user.is_authenticated:
+#             return func(request, *args, **kwargs)
+#         else:
+#             return HttpResponse("Authentication required")
+#
+#     return wrapper
+#
+#
+# # Use custom login decorator
+# @authentication_required
+# def protected_resource(request):
+#     # Your protected code here
+#     return HttpResponse("This is a protected resource.")
+#
+#
+# class SecureResource:
+#     @authentication_required
+#     def protected_method(self):
+#         # Your protected code here
+#         return "This is a protected method."
+#
+#
+# # Use build in login decorator
+#
+# @login_required
+# def built_in_protected_resource(request):
+#     # Your protected code here
+#     return HttpResponse("This is a protected resource.")
+
+print('----------Authorization using decorator---------------')
+
+
+# def user_has_permission(request):
+#     # Replace this with your actual authorization logic
+#     # Check if the user has the necessary permissions to access the view.
+#     # For example, you can check the user's role, group, or any other criteria.
+#
+#     if request.user.is_authenticated and request.user.has_perm('app.permission_name'):
+#         # In this example, we check if the user is authenticated and has a specific permission.
+#         return True
+#     else:
+#         return False
+#
+#
+# def custom_authorization_decorator(view_func):
+#     def wrapper(request, *args, **kwargs):
+#         # Check if the user meets certain authorization criteria.
+#         if user_has_permission(request):  # Replace with your own authorization logic.
+#             return view_func(request, *args, **kwargs)
+#         else:
+#             return HttpResponseForbidden("You do not have permission to access this page.")
+#     return wrapper
+#
+#
+# @custom_authorization_decorator
+# def my_protected_view(request):
+#     # Your view logic here
+#     context = {}
+#     return render(request, 'template.html', context)
+
+print('----------Time Profiling using decorator---------------')
+
+
+def profile(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        execution_time = end_time - start_time
+        print(f"{func.__name__} took {execution_time:.2f} seconds to execute")
+        return result
+    return wrapper
+
+
+@profile
+def my_function():
+    # Your function code here
+    time.sleep(2)
+
+
+my_function()
+
+print('----------Caching using decorator---------------')
+
+
+def cache_decorator(func):
+    cache = {}  # Dictionary to store cached results
+
+    @wraps(func)  # Preserve function metadata
+    def wrapper(*args, **kwargs):
+        # Generate a unique key based on function arguments
+        key = (*args, frozenset(kwargs.items()))
+
+        if key not in cache:
+            cache[key] = func(*args, **kwargs)  # Call the function and store the result
+        return cache[key]
+
+    return wrapper  # Return the wrapped function
+
+
+@cache_decorator
+def expensive_function(arg):
+    # Simulate an expensive computation
+    result = arg * 2
+    return result
+
+
+result1 = expensive_function(5)  # This will perform the expensive computation
+result2 = expensive_function(5)  # This will use the cached result
+
+print(result1)  # Output: 10
+print(result2)  # Output: 10 (from cache)

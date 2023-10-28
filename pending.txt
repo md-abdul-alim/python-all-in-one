@@ -9,7 +9,6 @@ closure - done
 cachetools - thread safty
 --
 higher order function
-lambda
 map
 filter
 reduce

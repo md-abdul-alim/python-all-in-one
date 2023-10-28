@@ -1,10 +1,7 @@
 """
 List of decorators:: https://wiki.python.org/moin/Decorators
------Decorator is a powerfull way to modify or enhance the behavior of function or method.
------Decorator is a design pattern and feature \n
------This allows us to modify or extend the behavior of function main_function without changing main_function code. \n
------Decorator is a higher-order function because this can take another function/method as argument and return a new
-        function that typically enhances/alters the behavior of the original function. \n
+-----Decorator is a higher-order function because this can take another function/method as argument and
+    allow us to modify or extend the behavior of other functions or methods without changing their source code. \n
 -----Built-in decorators:
 ----------@staticmethod :: Defines methods without self handle
 --------------------Doesn't have access to instance-specific data (attributes). Static method can't access self.

@@ -4,8 +4,8 @@ aiomultiprocess
 locks,
 semaphores
 
-decorator
-closure
+decorator - done
+closure - done
 cachetools - thread safty
 --
 higher order function
@@ -13,6 +13,7 @@ lambda
 map
 filter
 reduce
+lamda
 ---
 performance optimization:
 Profiling. like cProfile, line_profiler
@@ -22,7 +23,7 @@ JIT compilation
 -----
 how to sort dictionary
 crown job. celery, chanel
-
+local & nonlocal variable
 ----------
 1.write a function that removes duplicates from a list
 2.reverse a lindedlist
@@ -47,3 +48,4 @@ for other seperate compilation step.
 => python interpreted languages is slower in execution compared to compiled languages since they don't produce native
 machine code optimized for a specific platform.
 ----------------------
+difference between iterator vs generator?

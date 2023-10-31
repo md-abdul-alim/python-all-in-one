@@ -5,6 +5,7 @@ from django.views.decorators.http import require_http_methods
 from .models import Product
 from .serializers import ProductSerializer
 import csv
+from .tasks import handle_sleep, export_product_excel
 
 """
 subprocess
@@ -64,6 +65,7 @@ def run_scrapy_crawler_by_popen(request):
     try:
         process = subprocess.Popen(['scrapy', 'crawl', spider_name], cwd=settings.SPIDER_DIRECTORY)
 
+        export_product_excel.delay()
         # Check if the process is still running
         while process.poll() is None:
             response_data = {
@@ -197,7 +199,17 @@ def run_multiple_scrapy_crawler_popen_multiple_processes_concurrently(request):
         }
 
         return JsonResponse(response_data)
+
+
 """
 cwd: current working directory
 
 """
+
+
+def run_celery(request):
+    handle_sleep.delay()
+    return HttpResponse("Hello from celery")
+
+
+

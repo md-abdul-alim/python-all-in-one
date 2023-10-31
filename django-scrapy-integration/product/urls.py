@@ -1,7 +1,7 @@
 from django.urls import path
 from .apis import (run_scrapy_crawler_by_run, run_scrapy_crawler_by_popen, run_scrapy_crawler_by_popen_as_run,
                    run_scrapy_crawler_by_popen_and_do_some_other_tasks,
-                   run_multiple_scrapy_crawler_popen_multiple_processes_concurrently)
+                   run_multiple_scrapy_crawler_popen_multiple_processes_concurrently, run_celery)
 
 urlpatterns = [
     path('lulu/run/', run_scrapy_crawler_by_run),  # start the crawler in wait for the execution finish
@@ -9,4 +9,6 @@ urlpatterns = [
     path('lulu/use_popen_as_run/', run_scrapy_crawler_by_popen_as_run),
     path('lulu/popen_with_multi_tasks/', run_scrapy_crawler_by_popen_and_do_some_other_tasks),
     path('lulu/popen_multi_processes/', run_multiple_scrapy_crawler_popen_multiple_processes_concurrently),
+
+    path('celery/', run_celery)
 ]

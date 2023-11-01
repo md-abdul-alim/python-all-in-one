@@ -76,5 +76,14 @@
 9. What is data over-fetching/ under-fetching?
 => Client some time receive more data (over-fetching) or not enough data (under-fetching) compared to what they need.
 
-9. What is schema
+9. What is schema?
+=> Schema is a logical representation of database.
+    => What do you mean by the logical representation?
+        ~ Organize: how data should organize or how it is organized, we can get the answer from schema
+        ~ Relation: How data dependent or independent on each other, can be known from schema
+        ~ Constrain: database constrain related with database can be known
+        ~ Entities: Entity like model, relation between entities cana be known. Attributes inside entity like id, can
+            be known from schema.
+10. How to implement schema?
+=> using SQL insert, update, delete commands schema can implement.
 """

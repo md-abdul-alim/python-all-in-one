@@ -47,9 +47,9 @@ for other seperate compilation step.
 => python interpreted languages is slower in execution compared to compiled languages since they don't produce native
 machine code optimized for a specific platform.
 ----------------------
+
 difference between iterator vs generator?
 Which is the closure function? The outer function or the inner function?
 Inner function can only access the outer function variables or others method too?
 what is the difference between closure and decoretor in python?
-What is serializer?
 what asynchronous function is faster?

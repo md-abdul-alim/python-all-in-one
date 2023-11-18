@@ -8,5 +8,5 @@
 
 ~NoSQL ভিত্তিক হরাইজন্টাল স্কেলিং করা হয় মানে সার্ভারের Capacity বৃদ্ধি করার পরিবর্তে নতুন সার্ভার যোগ করাই হল হরাইজন্টাল স্কেলিং।
 
-~ACID database= atomicity, consistency, isolation, and durability (https://www.mongodb.com/basics/acid-transactions#:~:text=ACID%20is%20an%20acronym%20that,the%20event%20of%20unexpected%20errors.)(https://www.databricks.com/glossary/acid-transactions)
+~ACID database= atomicity, consistency, isolation, and durability (https://www.mongodb.com/basics/acid-transactions#:~:text=ACID%20is%20an%20acronym%20that,the%20event%20of%20unexpected%20errors.) (https://www.databricks.com/glossary/acid-transactions)
 

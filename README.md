@@ -26,4 +26,6 @@
 
 ~ connection pool: 
 
-~ lru-cache: (https://realpython.com/lru-cache-python/)
+~ lru-cache: (https://realpython.com/lru-cache-python/) Least Recently Used (LRU): এই স্ট্রাটেজিতে সম্প্রতি ব্যবহৃত না হওয়া ডেটাগুলোকে ক্যাশিং সার্ভারে থেকে বাদ দেয়া হয়।
+
+

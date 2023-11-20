@@ -1,28 +1,28 @@
 Scrapy is an open-source web crawling framework for Python that provides a set of pre-defined methods to facilitate the process of extracting data from websites. It is widely used for web scraping and crawling tasks, particularly for large-scale and complex projects. Here are some key details about Scrapy:
 
-## FEATURES OF SCRAPY:
+## FEATURES OF SCRAPY
 
-* Asynchronous and Concurrent: 
+* Asynchronous and Concurrent
 > Scrapy is built on top of the Twisted asynchronous networking library. It allows for asynchronous and concurrent requests, making it efficient for scraping large amounts of data.
-* Modular Design: 
+* Modular Design
 > Scrapy follows a modular design with components such as spiders, pipelines, and middlewares. This design promotes code organization and reusability.
 
-* Built-in Support for Handling Robots.txt:
+* Built-in Support for Handling Robots.txt
 > Scrapy automatically respects the rules defined in the robots.txt file of a website, ensuring ethical scraping practices.
 
-* Middleware System:
+* Middleware System
 > The middleware system allows you to customize the request/response processing pipeline. You can use middleware to add custom functionality, such as user-agent rotation or proxy usage.
 
-* Built-in Support for Handling Cookies and Sessions:
+* Built-in Support for Handling Cookies and Sessions
 > Scrapy provides built-in support for handling cookies and sessions, which is useful for scraping websites that require authentication.
 
-* Item Pipelines:
+* Item Pipelines
 > Scrapy uses pipelines to process and store scraped data. You can define pipelines to clean, validate, and store the extracted data in various formats (e.g., CSV, JSON, databases).
 
-* Extensible Architecture:
+* Extensible Architecture
 > Scrapy's architecture is designed to be extensible. You can create custom extensions, middleware, and pipelines to tailor Scrapy to the specific needs of your project.
 
-* XPath and CSS Selectors:
+* XPath and CSS Selectors
 > Scrapy supports both XPath and CSS selectors for extracting data from HTML documents. This flexibility allows you to choose the method that best suits your needs.
 
 ## COMPONENTS OF A SCRAPY PROJECT: 

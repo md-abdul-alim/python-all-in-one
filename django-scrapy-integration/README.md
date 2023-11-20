@@ -13,17 +13,22 @@ Scrapy is an open-source web crawling framework for Python that provides a set o
 * Middleware System:
 > The middleware system allows you to customize the request/response processing pipeline. You can use middleware to add custom functionality, such as user-agent rotation or proxy usage.
 
-Built-in Support for Handling Cookies and Sessions: Scrapy provides built-in support for handling cookies and sessions, which is useful for scraping websites that require authentication.
+* Built-in Support for Handling Cookies and Sessions:
+> Scrapy provides built-in support for handling cookies and sessions, which is useful for scraping websites that require authentication.
 
-Item Pipelines: Scrapy uses pipelines to process and store scraped data. You can define pipelines to clean, validate, and store the extracted data in various formats (e.g., CSV, JSON, databases).
+* Item Pipelines:
+> Scrapy uses pipelines to process and store scraped data. You can define pipelines to clean, validate, and store the extracted data in various formats (e.g., CSV, JSON, databases).
 
-Extensible Architecture: Scrapy's architecture is designed to be extensible. You can create custom extensions, middleware, and pipelines to tailor Scrapy to the specific needs of your project.
+* Extensible Architecture:
+> Scrapy's architecture is designed to be extensible. You can create custom extensions, middleware, and pipelines to tailor Scrapy to the specific needs of your project.
 
-XPath and CSS Selectors: Scrapy supports both XPath and CSS selectors for extracting data from HTML documents. This flexibility allows you to choose the method that best suits your needs.
+* XPath and CSS Selectors:
+> Scrapy supports both XPath and CSS selectors for extracting data from HTML documents. This flexibility allows you to choose the method that best suits your needs.
 
 ## COMPONENTS OF A SCRAPY PROJECT: 
 
-Spiders: Spiders are custom classes that define how to navigate a website and extract data. They specify how to follow links and define the extraction logic.
+* Spiders:
+>Spiders are custom classes that define how to navigate a website and extract data. They specify how to follow links and define the extraction logic.
 
 Items: Items are simple containers used to collect the scraped data. They are defined using a Python class, making it easy to structure the extracted information.
 

@@ -2,9 +2,10 @@ Scrapy is an open-source web crawling framework for Python that provides a set o
 
 ## FEATURES OF SCRAPY:
 
-> Asynchronous and Concurrent: Scrapy is built on top of the Twisted asynchronous networking library. It allows for asynchronous and concurrent requests, making it efficient for scraping large amounts of data.
->
-> Modular Design: Scrapy follows a modular design with components such as spiders, pipelines, and middlewares. This design promotes code organization and reusability.
+* Asynchronous and Concurrent: 
+> Scrapy is built on top of the Twisted asynchronous networking library. It allows for asynchronous and concurrent requests, making it efficient for scraping large amounts of data.
+* Modular Design: 
+> Scrapy follows a modular design with components such as spiders, pipelines, and middlewares. This design promotes code organization and reusability.
 
 Built-in Support for Handling Robots.txt: Scrapy automatically respects the rules defined in the robots.txt file of a website, ensuring ethical scraping practices.
 

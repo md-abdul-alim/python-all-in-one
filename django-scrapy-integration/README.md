@@ -1,6 +1,6 @@
 Scrapy is an open-source web crawling framework for Python that provides a set of pre-defined methods to facilitate the process of extracting data from websites. It is widely used for web scraping and crawling tasks, particularly for large-scale and complex projects. Here are some key details about Scrapy:
 
-* FEATURES OF SCRAPY:
+##FEATURES OF SCRAPY:
 
 Asynchronous and Concurrent: Scrapy is built on top of the Twisted asynchronous networking library. It allows for asynchronous and concurrent requests, making it efficient for scraping large amounts of data.
 
@@ -18,7 +18,7 @@ Extensible Architecture: Scrapy's architecture is designed to be extensible. You
 
 XPath and CSS Selectors: Scrapy supports both XPath and CSS selectors for extracting data from HTML documents. This flexibility allows you to choose the method that best suits your needs.
 
-* COMPONENTS OF A SCRAPY PROJECT: 
+##COMPONENTS OF A SCRAPY PROJECT: 
 
 Spiders: Spiders are custom classes that define how to navigate a website and extract data. They specify how to follow links and define the extraction logic.
 
@@ -30,7 +30,7 @@ Middleware: Middleware components are used to process requests and responses glo
 
 Settings: Scrapy uses a settings module to configure various aspects of a project, such as user agents, download delays, and other global settings.
 
-* EXAMPLE SCRAPY WORKFLOW:
+##EXAMPLE SCRAPY WORKFLOW:
 
 Create a Scrapy Project: Use the scrapy startproject command to create a new Scrapy project.
 

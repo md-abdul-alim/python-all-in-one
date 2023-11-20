@@ -7,9 +7,11 @@ Scrapy is an open-source web crawling framework for Python that provides a set o
 * Modular Design: 
 > Scrapy follows a modular design with components such as spiders, pipelines, and middlewares. This design promotes code organization and reusability.
 
-Built-in Support for Handling Robots.txt: Scrapy automatically respects the rules defined in the robots.txt file of a website, ensuring ethical scraping practices.
+* Built-in Support for Handling Robots.txt:
+> Scrapy automatically respects the rules defined in the robots.txt file of a website, ensuring ethical scraping practices.
 
-Middleware System: The middleware system allows you to customize the request/response processing pipeline. You can use middleware to add custom functionality, such as user-agent rotation or proxy usage.
+* Middleware System:
+> The middleware system allows you to customize the request/response processing pipeline. You can use middleware to add custom functionality, such as user-agent rotation or proxy usage.
 
 Built-in Support for Handling Cookies and Sessions: Scrapy provides built-in support for handling cookies and sessions, which is useful for scraping websites that require authentication.
 

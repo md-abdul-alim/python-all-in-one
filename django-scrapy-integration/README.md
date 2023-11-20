@@ -28,28 +28,39 @@ Scrapy is an open-source web crawling framework for Python that provides a set o
 ## COMPONENTS OF A SCRAPY PROJECT: 
 
 * Spiders:
->Spiders are custom classes that define how to navigate a website and extract data. They specify how to follow links and define the extraction logic.
+> Spiders are custom classes that define how to navigate a website and extract data. They specify how to follow links and define the extraction logic.
 
-Items: Items are simple containers used to collect the scraped data. They are defined using a Python class, making it easy to structure the extracted information.
+* Items:
+> Items are simple containers used to collect the scraped data. They are defined using a Python class, making it easy to structure the extracted information.
 
-Pipelines: Pipelines process the scraped items before storing them. You can define pipelines to clean, validate, and store data in various formats or databases.
+* Pipelines:
+> Pipelines process the scraped items before storing them. You can define pipelines to clean, validate, and store data in various formats or databases.
 
-Middleware: Middleware components are used to process requests and responses globally. They can modify the behavior of Scrapy's core components.
+* Middleware:
+> Middleware components are used to process requests and responses globally. They can modify the behavior of Scrapy's core components.
 
-Settings: Scrapy uses a settings module to configure various aspects of a project, such as user agents, download delays, and other global settings.
+* Settings:
+> Scrapy uses a settings module to configure various aspects of a project, such as user agents, download delays, and other global settings.
 
 ## EXAMPLE SCRAPY WORKFLOW:
 
-Create a Scrapy Project: Use the scrapy startproject command to create a new Scrapy project.
+* Create a Scrapy Project:
+> Use the scrapy startproject command to create a new Scrapy project.
 
-Define a Spider: Create a spider by defining a Python class that inherits from scrapy.Spider. Define the URLs to start crawling and the logic for extracting data.
+* Define a Spider:
+> Create a spider by defining a Python class that inherits from scrapy.Spider. Define the URLs to start crawling and the logic for extracting data.
 
-Define Items: Define the data structure using Scrapy Items, specifying the fields you want to extract.
+* Define Items:
+> Define the data structure using Scrapy Items, specifying the fields you want to extract.
 
-Write XPath or CSS Selectors: Use XPath or CSS selectors to extract data from HTML documents in the spider.
+* Write XPath or CSS Selectors:
+> Use XPath or CSS selectors to extract data from HTML documents in the spider.
 
-Store Data using Pipelines: Configure pipelines to process and store the scraped data. Scrapy includes a default pipeline for storing data in JSON format.
+* Store Data using Pipelines:
+> Configure pipelines to process and store the scraped data. Scrapy includes a default pipeline for storing data in JSON format.
 
-Run the Spider: Use the scrapy crawl command to start the spider and initiate the crawling process.
+* Run the Spider:
+> Use the scrapy crawl command to start the spider and initiate the crawling process.
 
-Inspect and Debug: Use Scrapy shell for interactive testing and debugging. It allows you to experiment with selectors and test XPath or CSS expressions.
+* Inspect and Debug:
+> Use Scrapy shell for interactive testing and debugging. It allows you to experiment with selectors and test XPath or CSS expressions.

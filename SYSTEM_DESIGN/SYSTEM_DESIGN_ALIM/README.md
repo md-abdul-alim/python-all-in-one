@@ -42,7 +42,11 @@
 * [A nice cheat sheet of different databases in cloud services](#a-nice-cheat-sheet-of-different-databases-in-cloud-services)
 * [8 Data Structures That Power Your Databases](#8-data-structures-that-power-your-databases)
 * [How is an SQL statement executed in the database?](#how-is-an-sql-statement-executed-in-the-database)
-* [CAP theorem](#cap-theorem)
+* [CAP theorem-Availability vs consistency](#cap-theorem-availability-vs-consistency)
+  * [CP-consistency and partition tolerance](#cp-consistency-and-partition-tolerance)
+    * [Consistency patterns](#consistency-patterns)
+  * [AP-availability and partition tolerance](#ap-availability-and-partition-tolerance)
+    * [Availability patterns](#availability-patterns)
 * [Types of Memory and Storage](#types-of-memory-and-storage)
 * [Visualizing a SQL query](#visualizing-a-sql-query)
 * [SQL language](#sql-language)
@@ -56,7 +60,8 @@
 * [Application caching](#application-caching)
 * [Caching at the database query level](#caching-at-the-database-query-level)
 * [Caching at the object level](#caching-at-the-object-level)
-* [When to update the cache](#when-to-update-the-cache)
+* [Top 5 Caching Patterns](#top-5-caching-patterns)
+* [Cache invalidation-When to update the cache](#cache-invalidation-when-to-update-the-cache)
     * [Cache-aside](#cache-aside)
     * [Write-through](#write-through)
     * [Write-behind (write-back)](#write-behind-write-back)
@@ -116,7 +121,7 @@
 * [Ref](https://github.com/donnemartin/system-design-primer#sql-tuning)
 
 
-## NoSQL
+## NoSQLCP-consistency and partition tolerance
 > #### Key-value store
 * [Ref](https://github.com/donnemartin/system-design-primer#key-value-store)
 
@@ -197,8 +202,19 @@
 ### How is an SQL statement executed in the database?
 * [Ref](https://github.com/ByteByteGoHq/system-design-101#how-is-an-sql-statement-executed-in-the-database)
 
-### CAP theorem
-* [Ref](https://github.com/ByteByteGoHq/system-design-101#cap-theorem)
+### CAP theorem-Availability vs consistency
+* [Ref 1](https://github.com/ByteByteGoHq/system-design-101#cap-theorem)
+* [Ref 2](https://github.com/donnemartin/system-design-primer/tree/master#cap-theorem)
+
+> #### CP-consistency and partition tolerance
+  * [Ref](https://github.com/donnemartin/system-design-primer/tree/master#cp---consistency-and-partition-tolerance)
+> #### Consistency patterns
+  * [Ref](https://github.com/donnemartin/system-design-primer/tree/master#consistency-patterns)
+> #### AP-availability and partition tolerance
+  * [Ref](https://github.com/donnemartin/system-design-primer/tree/master#ap---availability-and-partition-tolerance)
+> #### Availability patterns
+  * [Ref](https://github.com/donnemartin/system-design-primer/tree/master#availability-patterns)
+
 
 ### Types of Memory and Storage
 * [Ref](https://github.com/ByteByteGoHq/system-design-101#types-of-memory-and-storage)
@@ -211,7 +227,8 @@
 
 -----------------------------------
 ## Cache
-* [Ref](https://github.com/donnemartin/system-design-primer#cache)
+* [Ref 1](https://github.com/donnemartin/system-design-primer#cache)
+* [Ref 2](https://medium.com/must-know-computer-science/system-design-caching-acbd1b02ca01)
 
 > ### Client caching
   * [Ref](https://github.com/donnemartin/system-design-primer#client-caching)
@@ -233,9 +250,12 @@
 
 > ### Caching at the object level
   * [Ref](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+> ### Top 5 Caching Patterns
+  * [Ref](https://newsletter.systemdesign.one/p/caching-patterns)
 
-> ### When to update the cache
-  * [Ref](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache)
+> ### Cache invalidation-When to update the cache
+  * [Ref 1](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/caching.md#cache-invalidation)
 
 > #### Cache-aside
   * [Ref 1](https://github.com/donnemartin/system-design-primer#cache-aside)
@@ -251,12 +271,18 @@
 
 > #### Refresh-ahead
   * [Ref](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+
+
 > ### Eviction policies
-  * [Ref](https://github.com/karanpratapsingh/system-design#eviction-policies)
+  * [Ref 1](https://github.com/karanpratapsingh/system-design#eviction-policies)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/caching.md#cache-eviction-policies)
 > ### Distributed Cache
-  * [Ref](https://github.com/karanpratapsingh/system-design#distributed-cache)
+  * [Ref 1](https://github.com/karanpratapsingh/system-design#distributed-cache)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/caching.md#distributed-cache)
+  * [Ref 3](https://redis.com/glossary/distributed-caching/)
 > ### Global Cache
-  * [Ref](https://github.com/karanpratapsingh/system-design#global-cache)
+  * [Ref 1](https://github.com/karanpratapsingh/system-design#global-cache)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/caching.md#global-cache)
 > ### Redis-In Memory Database
   * [Ref](https://redis.io/)
 

@@ -1,5 +1,5 @@
 # SYSTEM DESIGN
-## Database Design
+## Database
 * [SQL](#sql)
   * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
     * [Replication](#replication)
@@ -38,11 +38,40 @@
   * [Time Series Relational DB](#time-series-relational-db)
   * [Facebook Gorilla Time Series DB](#facebook-gorilla-time-series-db)
 
+* [A nice cheat sheet of different databases in cloud services](#a-nice-cheat-sheet-of-different-databases-in-cloud-services)
+* [8 Data Structures That Power Your Databases](#8-data-structures-that-power-your-databases)
+* [How is an SQL statement executed in the database?](#how-is-an-sql-statement-executed-in-the-database)
+* [CAP theorem](#cap-theorem)
+* [Types of Memory and Storage](#types-of-memory-and-storage)
+* [Visualizing a SQL query](#visualizing-a-sql-query)
+* [SQL language](#sql-language)
+--------------------------------------
+
+## Cache
+* [Client caching](#client-caching)
+* [CDN caching](#cdn-caching)
+* [Web server caching](#web-server-caching)
+* [Database caching](#database-caching)
+* [Application caching](#application-caching)
+* [Caching at the database query level](#caching-at-the-database-query-level)
+* [Caching at the object level](#caching-at-the-object-level)
+* [When to update the cache](#when-to-update-the-cache)
+    * [Cache-aside](#cache-aside)
+    * [Write-through](#write-through)
+    * [Write-behind (write-back)](#write-behind-write-back)
+    * [Refresh-ahead](#refresh-ahead)
 * [In Memory Database-Redis](#in-memory-database-redis)
   * [Redis Official Documentation](#redis-official-documentation)
   * [Learn Redis through Redis University](#learn-redis-through-redis-university)
   * [Redis Open Source Repo](#redis-open-source-repo)
   * [Redis Architecture](#redis-architecture)
+  * [YouTube Video](#youtube-video)
+* [Data is cached everywhere](#data-is-cached-everywhere)
+* [Why is Redis so fast?](#why-is-redis-so-fast)
+* [How can Redis be used?](#how-can-redis-be-used)
+* [Top caching strategies](#top-caching-strategies)
+
+
 --------------------------------------
 
 ## Software Architectural Design
@@ -52,7 +81,7 @@
 ## Server Side Design
 
 
-## Database Design
+## Database
 ## SQL
 ### Relational database management system (RDBMS)
 * [Ref](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
@@ -151,9 +180,72 @@
 > #### Facebook Gorilla Time Series DB
   * [Ref](https://www.vldb.org/pvldb/vol8/p1816-teller.pdf)
 
+### A nice cheat sheet of different databases in cloud services
+* [Ref](https://github.com/ByteByteGoHq/system-design-101#a-nice-cheat-sheet-of-different-databases-in-cloud-services)
 
-## In Memory Database-Redis
+### 8 Data Structures That Power Your Databases
+* [Ref](https://github.com/ByteByteGoHq/system-design-101#8-data-structures-that-power-your-databases)
 
+### How is an SQL statement executed in the database?
+* [Ref](https://github.com/ByteByteGoHq/system-design-101#how-is-an-sql-statement-executed-in-the-database)
+
+### CAP theorem
+* [Ref](https://github.com/ByteByteGoHq/system-design-101#cap-theorem)
+
+### Types of Memory and Storage
+* [Ref](https://github.com/ByteByteGoHq/system-design-101#types-of-memory-and-storage)
+
+### Visualizing a SQL query
+* [Ref](https://github.com/ByteByteGoHq/system-design-101#visualizing-a-sql-query)
+
+### SQL language
+* [Ref](https://github.com/ByteByteGoHq/system-design-101#sql-language)
+
+-----------------------------------
+## Cache
+* [Ref](https://github.com/donnemartin/system-design-primer#cache)
+
+> ### Client caching
+  * [Ref](https://github.com/donnemartin/system-design-primer#client-caching)
+
+> ### CDN caching
+  * [Ref](https://github.com/donnemartin/system-design-primer#cdn-caching)
+
+> ### Web server caching
+  * [Ref](https://github.com/donnemartin/system-design-primer#web-server-caching)
+
+> ### Database caching
+  * [Ref](https://github.com/donnemartin/system-design-primer#database-caching)
+
+> ### Application caching
+  * [Ref](https://github.com/donnemartin/system-design-primer#application-caching)
+
+> ### Caching at the database query level
+  * [Ref](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
+
+> ### Caching at the object level
+  * [Ref](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+
+> ### When to update the cache
+  * [Ref](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache)
+
+> #### Cache-aside
+  * [Ref](https://github.com/donnemartin/system-design-primer#cache-aside)
+
+> #### Write-through
+  * [Ref](https://github.com/donnemartin/system-design-primer#write-through)
+
+> #### Write-behind (write-back)
+  * [Ref](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
+
+> #### Refresh-ahead
+  * [Ref](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+
+> ### Redis - In Memory Database
+  * [Ref](https://redis.io/)
+
+> #### Learn Redis through Redis University
+  * [Ref](https://university.redis.com/)
 > #### Redis Official Documentation
   * [Ref](https://medium.com/pinterest-engineering/goku-building-a-scalable-and-high-performant-time-series-database-system-a8ff5758a181)
 > #### Learn Redis through Redis University
@@ -162,3 +254,19 @@
   * [Ref](https://github.com/redis/redis)
 > #### Redis Architecture
   * [Ref](https://medium.com/opstree-technology/redis-cluster-architecture-replication-sharding-and-failover-86871e783ac0)
+> #### YouTube Video
+  * [Ref](https://www.youtube.com/watch?v=Vx2zPMPvmug&t=4074s)
+
+> ### Data is cached everywhere
+  * [Ref](https://github.com/ByteByteGoHq/system-design-101#data-is-cached-everywhere)
+
+> ### Why is Redis so fast?
+  * [Ref](https://github.com/ByteByteGoHq/system-design-101#why-is-redis-so-fast)
+
+> ### How can Redis be used?
+  * [Ref](https://github.com/ByteByteGoHq/system-design-101#how-can-redis-be-used)
+
+> ### Top caching strategies
+  * [Ref](https://github.com/ByteByteGoHq/system-design-101#top-caching-strategies)
+
+

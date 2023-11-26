@@ -31,6 +31,7 @@
 * [SQL vs NoSQL](#sql-vs-nosql)
   * [When to use SQL or NoSQL?](#when-to-use-sql-or-nosql)
   * [Graph Database vs Relational Database](#graph-database-vs-relational-database)
+  * [Relational vs non-relational](#relational-vs-non-relational)
 
 * [Time Series Databases](#time-series-databases)
   * [Pinterest Time Series Database](#pinterest-time-series-database)
@@ -60,7 +61,10 @@
     * [Write-through](#write-through)
     * [Write-behind (write-back)](#write-behind-write-back)
     * [Refresh-ahead](#refresh-ahead)
-* [In Memory Database-Redis](#in-memory-database-redis)
+* [Eviction policies](#eviction-policies)
+* [Distributed Cache](#distributed-cache)
+* [Global Cache](#global-cache)
+* [Redis-In Memory Database](#redis-in-memory-database)
   * [Redis Official Documentation](#redis-official-documentation)
   * [Learn Redis through Redis University](#learn-redis-through-redis-university)
   * [Redis Open Source Repo](#redis-open-source-repo)
@@ -70,6 +74,8 @@
 * [Why is Redis so fast?](#why-is-redis-so-fast)
 * [How can Redis be used?](#how-can-redis-be-used)
 * [Top caching strategies](#top-caching-strategies)
+* [Use cases](#use-cases)
+* [Advantages](#advantages)
 
 
 --------------------------------------
@@ -167,6 +173,8 @@
   * [Ref](https://github.com/lahin31/system-design-bangla/blob/master/sections/database/README.md)
 > #### Graph Database vs Relational Database
   * [Ref](https://memgraph.com/blog/graph-database-vs-relational-database)
+> #### Relational vs non-relational
+  * [Ref](https://www.altexsoft.com/blog/comparing-database-management-systems-mysql-postgresql-mssql-server-mongodb-elasticsearch-and-others/)
 
 
 ## Time Series Databases
@@ -230,18 +238,26 @@
   * [Ref](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache)
 
 > #### Cache-aside
-  * [Ref](https://github.com/donnemartin/system-design-primer#cache-aside)
+  * [Ref 1](https://github.com/donnemartin/system-design-primer#cache-aside)
+  * [Ref 2](https://github.com/karanpratapsingh/system-design#write-around-cache)
 
 > #### Write-through
-  * [Ref](https://github.com/donnemartin/system-design-primer#write-through)
+  * [Ref 1](https://github.com/donnemartin/system-design-primer#write-through)
+  * [Ref 2](https://github.com/karanpratapsingh/system-design#write-through-cache)
 
 > #### Write-behind (write-back)
-  * [Ref](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
+  * [Ref 1](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
+  * [Ref 2](https://github.com/karanpratapsingh/system-design#write-back-cache)
 
 > #### Refresh-ahead
   * [Ref](https://github.com/donnemartin/system-design-primer#refresh-ahead)
-
-> ### Redis - In Memory Database
+> ### Eviction policies
+  * [Ref](https://github.com/karanpratapsingh/system-design#eviction-policies)
+> ### Distributed Cache
+  * [Ref](https://github.com/karanpratapsingh/system-design#distributed-cache)
+> ### Global Cache
+  * [Ref](https://github.com/karanpratapsingh/system-design#global-cache)
+> ### Redis-In Memory Database
   * [Ref](https://redis.io/)
 
 > #### Learn Redis through Redis University
@@ -268,5 +284,11 @@
 
 > ### Top caching strategies
   * [Ref](https://github.com/ByteByteGoHq/system-design-101#top-caching-strategies)
+
+> ### Use cases
+  * [Ref](https://github.com/karanpratapsingh/system-design#use-cases)
+
+> ### Advantages
+  * [Ref](https://github.com/karanpratapsingh/system-design#advantages-2)
 
 

@@ -44,6 +44,8 @@
 * [Transactions](#transactions)
   * [Distributed Transactions](#distributed-transactions)
 
+* [Consistent Hashing](#consistent-hashing)
+
 * [SQL vs NoSQL](#sql-vs-nosql)
   * [When to use SQL or NoSQL?](#when-to-use-sql-or-nosql)
   * [Graph Database vs Relational Database](#graph-database-vs-relational-database)
@@ -104,9 +106,12 @@
 
 ## Software Architectural Design
 
-## Code Base Design
+--------------------------------------
 
-## Server Side Design
+## Server and Network Design
+
+--------------------------------------
+--------------------------------------
 
 
 ## Database
@@ -231,6 +236,14 @@
 #### [Ref](https://github.com/karanpratapsingh/system-design#transactions)
 > #### Distributed Transactions
   * [Ref](https://github.com/karanpratapsingh/system-design#distributed-transactions)
+
+## Consistent Hashing
+#### [Ref 1](https://tom-e-white.com/2007/11/consistent-hashing.html)
+#### [Ref 2](https://arpitbhayani.me/blogs/consistent-hashing/)
+#### [Ref 3](https://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
+#### [Ref 4](https://github.com/karanpratapsingh/system-design#consistent-hashing)
+#### [Ref 5](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/consistent-hashing.md#consistent-hashing)
+
 
 
 ## SQL vs NoSQL

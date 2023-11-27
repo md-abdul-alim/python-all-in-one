@@ -421,7 +421,8 @@
 > ### Software Architecture
 
   #### MVC, MVP, MVVM, MVVM-C, and VIPER
-  * [Ref](https://github.com/ByteByteGoHq/system-design-101#mvc-mvp-mvvm-mvvm-c-and-viper)
+  * [Ref 1](https://github.com/ByteByteGoHq/system-design-101#mvc-mvp-mvvm-mvvm-c-and-viper)
+  * [Ref 2](https://www.linkedin.com/posts/ginacostag_developer-software-python-activity-7134888640513495040-oARO?utm_source=share&utm_medium=member_desktop)
   #### 18 Key Design Patterns
   * [Ref](https://github.com/ByteByteGoHq/system-design-101#18-key-design-patterns-every-developer-should-know)
   #### Hexagonal Architecture

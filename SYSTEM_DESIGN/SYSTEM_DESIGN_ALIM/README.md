@@ -5,6 +5,7 @@
     * [Replication](#replication)
       * [Master-Slave](#master-slave)
       * [Master-Master](#master-master)
+      * [Synchronous vs Asynchronous replication](#synchronous-vs-asynchronous-replication)
     * [Federation](#federation)
     * [Sharding](#sharding)
     * [De-normalization](#de-normalization)
@@ -28,6 +29,21 @@
     * [Scylla DB Compaction](#scylla-db-compaction)
     * [Indexing In Cassandra](#indexing-in-cassandra)
 
+* [Indexes](#indexes)
+  * [Dense Index](#dense-index)
+  * [Sparse Index](#sparse-index)
+
+* [Normalization and Denormalization](#normalization-and-denormalization)
+  * [Normalization](#normalization)
+  * [Denormalization](#denormalization)
+
+* [ACID and BASE consistency models](#acid-and-base-consistency-models)
+  * [ACID](#acid)
+  * [BASE](#base)
+
+* [Transactions](#transactions)
+  * [Distributed Transactions](#distributed-transactions)
+
 * [SQL vs NoSQL](#sql-vs-nosql)
   * [When to use SQL or NoSQL?](#when-to-use-sql-or-nosql)
   * [Graph Database vs Relational Database](#graph-database-vs-relational-database)
@@ -47,6 +63,7 @@
     * [Consistency patterns](#consistency-patterns)
   * [AP-availability and partition tolerance](#ap-availability-and-partition-tolerance)
     * [Availability patterns](#availability-patterns)
+* [PACELC Theorem](#pacelc-theorem)
 * [Types of Memory and Storage](#types-of-memory-and-storage)
 * [Visualizing a SQL query](#visualizing-a-sql-query)
 * [SQL language](#sql-language)
@@ -99,20 +116,30 @@
 
 > #### Replication
 
-* [Ref](https://github.com/lahin31/system-design-bangla/tree/master#section-18-database-replication)
+* [Ref 1](https://github.com/lahin31/system-design-bangla/tree/master#section-18-database-replication)
+* [Ref 2](https://github.com/karanpratapsingh/system-design#database-replication)
 
 #### Master-Slave
-* [Ref](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [Ref 1](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [Ref 2](https://github.com/karanpratapsingh/system-design#master-slave-replication)
 
 #### Master-Master
-* [Ref](https://github.com/donnemartin/system-design-primer#master-master-replication)
+* [Ref 1](https://github.com/donnemartin/system-design-primer#master-master-replication)
+* [Ref 2](https://github.com/karanpratapsingh/system-design#master-master-replication)
+
+#### Synchronous vs Asynchronous replication
+* [Ref](https://github.com/karanpratapsingh/system-design#synchronous-vs-asynchronous-replication)
+
 
 > #### Federation
-* [Ref](https://github.com/donnemartin/system-design-primer#federation)
+* [Ref 1](https://github.com/donnemartin/system-design-primer#federation)
+* [Ref 2](https://github.com/karanpratapsingh/system-design#database-federation)
 
 > #### Sharding
-* [Ref](https://github.com/donnemartin/system-design-primer#sharding)
-* [Ref](https://github.com/lahin31/system-design-bangla/tree/master#section-17-database-sharding)
+* [Ref 1](https://github.com/donnemartin/system-design-primer#sharding)
+* [Ref 2](https://github.com/lahin31/system-design-bangla/tree/master#section-17-database-sharding)
+* [Ref 3](https://github.com/karanpratapsingh/system-design#sharding)
+* [Ref 4](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/sharding.md#sharding--data-partitioning)
 
 > #### De-normalization
 * [Ref](https://github.com/donnemartin/system-design-primer#denormalization)
@@ -172,6 +199,40 @@
 * [Ref](https://www.bmc.com/blogs/cassandra-clustering-columns-partition-composite-key/)
 
 
+## Indexes
+#### [Ref](https://github.com/karanpratapsingh/system-design#indexes)
+> #### Dense Index
+  * [Ref](https://github.com/karanpratapsingh/system-design#dense-index)
+
+> #### Sparse Index
+  * [Ref](https://github.com/karanpratapsingh/system-design#sparse-index)
+
+
+## Normalization and Denormalization
+#### [Ref](https://github.com/karanpratapsingh/system-design#normalization-and-denormalization)
+> #### Normalization
+  * [Ref](https://github.com/karanpratapsingh/system-design#normalization)
+
+> #### Denormalization
+  * [Ref](https://github.com/karanpratapsingh/system-design#denormalization)
+
+
+## ACID and BASE consistency models
+#### [Ref 1](https://github.com/karanpratapsingh/system-design#acid-and-base-consistency-models)
+#### [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/cap-theorem.md#cap-theorem)
+> #### ACID
+  * [Ref 1](https://github.com/karanpratapsingh/system-design#acid)
+  * [Ref 2](https://redis.com/glossary/acid-transactions/)
+> #### BASE
+  * [Ref](https://github.com/karanpratapsingh/system-design#base)
+
+
+## Transactions
+#### [Ref](https://github.com/karanpratapsingh/system-design#transactions)
+> #### Distributed Transactions
+  * [Ref](https://github.com/karanpratapsingh/system-design#distributed-transactions)
+
+
 ## SQL vs NoSQL
 #### [Ref](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
 > #### When to use SQL or NoSQL?
@@ -205,6 +266,7 @@
 ### CAP theorem-Availability vs consistency
 * [Ref 1](https://github.com/ByteByteGoHq/system-design-101#cap-theorem)
 * [Ref 2](https://github.com/donnemartin/system-design-primer/tree/master#cap-theorem)
+* [Ref 3](https://github.com/karanpratapsingh/system-design#cap-theorem)
 
 > #### CP-consistency and partition tolerance
   * [Ref](https://github.com/donnemartin/system-design-primer/tree/master#cp---consistency-and-partition-tolerance)
@@ -215,6 +277,8 @@
 > #### Availability patterns
   * [Ref](https://github.com/donnemartin/system-design-primer/tree/master#availability-patterns)
 
+### PACELC Theorem
+* [Ref](https://github.com/karanpratapsingh/system-design#pacelc-theorem)
 
 ### Types of Memory and Storage
 * [Ref](https://github.com/ByteByteGoHq/system-design-101#types-of-memory-and-storage)

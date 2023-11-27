@@ -104,8 +104,30 @@
 
 --------------------------------------
 
-## Software Architectural Design
+## Architectural Design
+* [Software Architecture](#software-architecture)
+  * [MVC, MVP, MVVM, MVVM-C, and VIPER](#mvc-mvp-mvvm-mvvm-c-and-viper)
+  * [18 Key Design Patterns](#18-key-design-patterns)
+  * [Hexagonal Architecture](#hexagonal-architecture)
+  * [Hexagonal architecture (Alistair Cockburn)](#hexagonal-architecture-alistair-cockburn)
+  * [The Clean Code by Robert C. Martin (Uncle Bob)](#the-clean-code-by-robert-c-martin-uncle-bob)
+  * [CQRS](#cqrs)
+  * [Domain Driven Design](#domain-driven-design)
 
+* [Microservice architecture](#microservice-architecture)
+  * [Monolith Architecture](#monolith-architecture)
+  * [Monoliths vs Microservices](#monoliths-vs-microservices)
+  * [Uber Nano services antipattern](#uber-nano-services-antipattern)
+  * [Uber Domain oriented microservice](#uber-domain-oriented-microservice)
+  * [What does a typical microservice architecture look like?](#what-does-a-typical-microservice-architecture-look-like)
+  * [Microservice Best Practices](#microservice-best-practices)
+  * [What tech stack is commonly used for microservices?](#what-tech-stack-is-commonly-used-for-microservices)
+  * [Why is Kafka fast?](#why-is-kafka-fast)
+* [Event Driven Architectures](#event-driven-architectures)
+  * [Martin Fowler-Event Driven Architecture](#martin-fowler-event-driven-architecture)
+  * [Event Driven Architecture](#event-driven-architecture)
+
+  
 --------------------------------------
 
 ## Server and Network Design
@@ -395,3 +417,46 @@
   * [Ref](https://github.com/karanpratapsingh/system-design#advantages-2)
 
 
+## Architectural Design
+> ### Software Architecture
+
+  #### MVC, MVP, MVVM, MVVM-C, and VIPER
+  * [Ref](https://github.com/ByteByteGoHq/system-design-101#mvc-mvp-mvvm-mvvm-c-and-viper)
+  #### 18 Key Design Patterns
+  * [Ref](https://github.com/ByteByteGoHq/system-design-101#18-key-design-patterns-every-developer-should-know)
+  #### Hexagonal Architecture
+  * [Ref](https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749)
+  #### Hexagonal architecture (Alistair Cockburn)
+  * [Ref](https://alistair.cockburn.us/hexagonal-architecture/)
+  #### The Clean Code by Robert C. Martin (Uncle Bob)
+  * [Ref](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+  #### CQRS
+  * [Ref](https://martinfowler.com/bliki/CQRS.html)
+  #### Domain Driven Design
+  * [Ref](https://martinfowler.com/bliki/DomainDrivenDesign.html)
+
+
+
+> ### Microservice architecture
+  #### Monolith Architecture
+  * [Ref](https://buttercms.com/books/microservices-for-startups/should-you-always-start-with-a-monolith/)
+  #### Monoliths vs Microservices
+  * [Ref](https://buttercms.com/books/microservices-for-startups/should-you-always-start-with-a-monolith/)
+  #### Uber Nano services antipattern
+  * [Ref](https://www.youtube.com/watch?v=kb-m2fasdDY)
+  #### Uber Domain oriented microservice
+  * [Ref](https://eng.uber.com/microservice-architecture/)
+  #### What does a typical microservice architecture look like?
+  * [Ref](https://github.com/ByteByteGoHq/system-design-101#what-does-a-typical-microservice-architecture-look-like)
+  #### Microservice Best Practices
+  * [Ref](https://github.com/ByteByteGoHq/system-design-101#microservice-best-practices)
+  #### What tech stack is commonly used for microservices?
+  * [Ref](https://github.com/ByteByteGoHq/system-design-101#what-tech-stack-is-commonly-used-for-microservices)
+  #### Why is Kafka fast?
+  * [Ref](https://github.com/ByteByteGoHq/system-design-101#why-is-kafka-fast)
+
+> ### Event Driven Architectures
+  #### Martin Fowler-Event Driven Architecture
+  * [Ref](https://www.youtube.com/watch?v=STKCRSUsyP0)
+  #### Event Driven Architecture
+  * [Ref](https://martinfowler.com/articles/201701-event-driven.html)

@@ -80,6 +80,7 @@
 * [Caching at the database query level](#caching-at-the-database-query-level)
 * [Caching at the object level](#caching-at-the-object-level)
 * [Top 5 Caching Patterns](#top-5-caching-patterns)
+* [Backend Caching Strategies](#backend-caching-strategies)
 * [Cache invalidation-When to update the cache](#cache-invalidation-when-to-update-the-cache)
     * [Cache-aside](#cache-aside)
     * [Write-through](#write-through)
@@ -351,6 +352,8 @@
   * [Ref](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
 > ### Top 5 Caching Patterns
   * [Ref](https://newsletter.systemdesign.one/p/caching-patterns)
+> ### Backend Caching Strategies
+  * [Ref](https://www.linkedin.com/feed/update/urn:li:activity:7136700953629450240/)
 
 > ### Cache invalidation-When to update the cache
   * [Ref 1](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache)

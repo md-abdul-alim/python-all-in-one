@@ -1,0 +1,14 @@
+https://github.com/search?q=system+design&type=repositories&p=1
+
+
+https://github.com/Jeevan-kumar-Raj/Grokking-System-Design
+https://github.com/madd86/awesome-system-design
+https://github.com/storybookjs/design-system
+https://github.com/ashishps1/awesome-system-design-resources
+https://github.com/prasadgujar/low-level-design-primer
+https://github.com/DreamOfTheRedChamber/system-design-interviews
+https://github.com/puncsky/system-design-and-architecture
+https://github.com/codersguild/System-Design
+https://github.com/creativetimofficial/argon-design-system
+https://github.com/creativetimofficial/vue-argon-design-system
+https://github.com/weeeBox/mobile-system-design

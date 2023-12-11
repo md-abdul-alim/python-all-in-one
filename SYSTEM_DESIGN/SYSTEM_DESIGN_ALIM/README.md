@@ -601,7 +601,7 @@
   * [Ref](https://systemdesign.one/slack-architecture/)
   #### Design Live Comments
   * [Ref](https://systemdesign.one/live-comment-system-design/)
-  #### Design Distributed Counter 
+  #### Design Distributed Counter
   * [Ref](https://systemdesign.one/distributed-counter-system-design/)
   #### Design Location Based Service like Yelp
   * [Ref](https://www.youtube.com/watch?v=M4lR_Va97cQ)

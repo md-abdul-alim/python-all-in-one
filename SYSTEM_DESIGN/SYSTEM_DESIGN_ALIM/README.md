@@ -134,6 +134,63 @@
 ## Server and Network Design
 
 --------------------------------------
+# System Design Interview Problems
+
+## Easy
+* [Design Leaderboard](#design-leaderboard)
+* [Design URL Shortener like TinyURL](#design-url-shortener-like-tinyurl)
+* [Design Text Storage Service like Pastebin](#design-text-storage-service-like-pastebin)
+* [Design Content Delivery Network (CDN)](#design-content-delivery-network-cdn)
+* [Design Parking Garage](#design-parking-garage)
+* [Design Vending Machine](#design-vending-machine)
+* [Design Distributed Key-Value Store](#design-distributed-key-value-store)
+* [Design Distributed Cache](#design-distributed-cache)
+* [Design Distributed Job Scheduler](#design-distributed-job-scheduler)
+* [Design Authentication System](#design-authentication-system)
+* [Design Unified Payments Interface (UPI)](#design-unified-payments-interface-upi)
+
+## Medium
+* [Design Instagram](#design-instagram)
+* [Design Tinder](#design-tinder)
+* [Design WhatsApp](#design-whatsapp)
+* [Design Facebook](#design-facebook)
+* [Design Twitter](#design-twitter)
+* [Design Reddit](#design-reddit)
+* [Design Netflix](#design-netflix)
+* [Design Youtube](#design-youtube)
+* [Design Google Search](#design-google-search)
+* [Design E-commerce Store like Amazon](#design-e-commerce-store-like-amazon)
+* [Design Spotify](#design-spotify)
+* [Design TikTok](#design-tiktok)
+* [Design Shopify](#design-shopify)
+* [Design Airbnb](#design-airbnb)
+* [Design Autocomplete for Search Engines](#design-autocomplete-for-search-engines)
+* [Design Rate Limiter](#design-rate-limiter)
+* [Design Distributed Message Queue like Kafka](#design-distributed-message-queue-like-kafka)
+* [Design Flight Booking System](#design-flight-booking-system)
+* [Design Online Code Editor](#design-online-code-editor)
+* [Design Stock Exchange System](#design-stock-exchange-system)
+* [Design an Analytics Platform (Metrics & Logging)](#design-an-analytics-platform-metrics--logging)
+* [Design Notification Service](#design-notification-service)
+* [Design Payment System](#design-payment-system)
+
+## Hard
+* [Design Slack](#design-slack)
+* [Design Live Comments](#design-live-comments)
+* [Design Distributed Counter](#design-distributed-counter)
+* [Design Location Based Service like Yelp](#design-location-based-service-like-yelp)
+* [Design Uber](#design-uber)
+* [Design Food Delivery App like Doordash](#design-food-delivery-app-like-doordash)
+* [Design Google Docs](#design-google-docs)
+* [Design Google Maps](#design-google-maps)
+* [Design Zoom](#design-zoom)
+* [Design File Sharing System like Dropbox](#design-file-sharing-system-like-dropbox)
+* [Design Ticket Booking System like BookMyShow](#design-ticket-booking-system-like-bookmyshow)
+* [Design Distributed Web Crawler](#design-distributed-web-crawler)
+* [Design Code Deployment System](#design-code-deployment-system)
+* [Design Distributed Cloud Storage like S3](#design-distributed-cloud-storage-like-s3)
+* [Design Distributed Locking Service](#design-distributed-locking-service)
+
 --------------------------------------
 
 
@@ -464,3 +521,109 @@
   * [Ref](https://www.youtube.com/watch?v=STKCRSUsyP0)
   #### Event Driven Architecture
   * [Ref](https://martinfowler.com/articles/201701-event-driven.html)
+
+---------------------------------
+## System Design Interview Problems
+> ### Easy
+  #### Design Leaderboard
+  * [Ref](https://systemdesign.one/leaderboard-system-design/)
+  #### Design URL Shortener like TinyURL
+  * [Ref](https://www.youtube.com/watch?v=fMZMm_0ZhK4&themeRefresh=1)
+  #### Design Text Storage Service like Pastebin
+  * [Ref](https://www.youtube.com/watch?v=josjRSBqEBI)
+  #### Design Content Delivery Network (CDN)
+  * [Ref](https://www.youtube.com/watch?v=8zX0rue2Hic)
+  #### Design Parking Garage
+  * [Ref](https://www.youtube.com/watch?v=NtMvNh0WFVM)
+  #### Design Vending Machine
+  * [Ref](https://www.youtube.com/watch?v=D0kDMUgo27c)
+  #### Design Distributed Key-Value Store
+  * [Ref](https://www.youtube.com/watch?v=rnZmdmlR-2M)
+  #### Design Distributed Cache
+  * [Ref](https://www.youtube.com/watch?v=iuqZvajTOyA)
+  #### Design Distributed Job Scheduler
+  * [Ref](https://towardsdatascience.com/ace-the-system-design-interview-job-scheduling-system-b25693817950)
+  #### Design Authentication System
+  * [Ref](https://www.youtube.com/watch?v=uj_4vxm9u90)
+  #### Design Unified Payments Interface (UPI)
+  * [Ref](https://www.youtube.com/watch?v=QpLy0_c_RXk)
+
+> ### Medium
+  #### Design Instagram
+  * [Ref](https://www.youtube.com/watch?v=VJpfO6KdyWE)
+  #### Design Tinder
+  * [Ref](https://www.youtube.com/watch?v=tndzLznxq40)
+  #### Design WhatsApp
+  * [Ref](https://www.youtube.com/watch?v=vvhC64hQZMk)
+  #### Design Facebook
+  * [Ref](https://www.youtube.com/watch?v=9-hjBGxuiEs)
+  #### Design Twitter
+  * [Ref](https://www.youtube.com/watch?v=wYk0xPP_P_8)
+  #### Design Reddit
+  * [Ref](https://www.youtube.com/watch?v=KYExYE_9nIY)
+  #### Design Netflix
+  * [Ref](https://www.youtube.com/watch?v=psQzyFfsUGU)
+  #### Design Youtube
+  * [Ref](https://www.youtube.com/watch?v=jPKTo1iGQiE)
+  #### Design Google Search
+  * [Ref](https://www.youtube.com/watch?v=CeGtqouT8eA)
+  #### Design E-commerce Store like Amazon
+  * [Ref](https://www.youtube.com/watch?v=EpASu_1dUdE)
+  #### Design Spotify
+  * [Ref](https://www.youtube.com/watch?v=_K-eupuDVEc)
+  #### Design TikTok
+  * [Ref](https://www.youtube.com/watch?v=Z-0g_aJL5Fw)
+  #### Design Shopify
+  * [Ref](https://www.youtube.com/watch?v=lEL4F_0J3l8)
+  #### Design Airbnb
+  * [Ref](https://www.youtube.com/watch?v=YyOXt2MEkv4)
+  #### Design Autocomplete for Search Engines
+  * [Ref](https://www.youtube.com/watch?v=us0qySiUsGU)
+  #### Design Rate Limiter
+  * [Ref](https://www.youtube.com/watch?v=mhUQe4BKZXs)
+  #### Design Distributed Message Queue like Kafka
+  * [Ref](https://www.youtube.com/watch?v=iJLL-KPqBpM)
+  #### Design Flight Booking System
+  * [Ref](https://www.youtube.com/watch?v=qsGcfVGvFSs)
+  #### Design Online Code Editor
+  * [Ref](https://www.youtube.com/watch?v=07jkn4jUtso)
+  #### Design Stock Exchange System
+  * [Ref](https://www.youtube.com/watch?v=dUMWMZmMsVE)
+  #### Design an Analytics Platform (Metrics & Logging)
+  * [Ref](https://www.youtube.com/watch?v=kIcq1_pBQSY)
+  #### Design Notification Service
+  * [Ref](https://www.youtube.com/watch?v=CUwt9_l0DOg)
+  #### Design Payment System
+  * [Ref](https://www.youtube.com/watch?v=olfaBgJrUBI)
+
+> ### Hard
+  #### Design Slack
+  * [Ref](https://systemdesign.one/slack-architecture/)
+  #### Design Live Comments
+  * [Ref](https://systemdesign.one/live-comment-system-design/)
+  #### Design Distributed Counter 
+  * [Ref](https://systemdesign.one/distributed-counter-system-design/)
+  #### Design Location Based Service like Yelp
+  * [Ref](https://www.youtube.com/watch?v=M4lR_Va97cQ)
+  #### Design Uber
+  * [Ref](https://www.youtube.com/watch?v=umWABit-wbk)
+  #### Design Food Delivery App like Doordash
+  * [Ref](https://www.youtube.com/watch?v=iRhSAR3ldTw)
+  #### Design Google Docs
+  * [Ref](https://www.youtube.com/watch?v=2auwirNBvGg)
+  #### Design Google Maps
+  * [Ref](https://www.youtube.com/watch?v=jk3yvVfNvds)
+  #### Design Zoom
+  * [Ref](https://www.youtube.com/watch?v=G32ThJakeHk)
+  #### Design File Sharing System like Dropbox
+  * [Ref](https://www.youtube.com/watch?v=U0xTu6E2CT8)
+  #### Design Ticket Booking System like BookMyShow
+  * [Ref](https://www.youtube.com/watch?v=lBAwJgoO3Ek)
+  #### Design Distributed Web Crawler
+  * [Ref](https://www.youtube.com/watch?v=BKZxZwUgL3Y)
+  #### Design Code Deployment System
+  * [Ref](https://www.youtube.com/watch?v=q0KGYwNbf-0)
+  #### Design Distributed Cloud Storage like S3
+  * [Ref](https://www.youtube.com/watch?v=UmWtcgC96X8)
+  #### Design Distributed Locking Service
+  * [Ref](https://www.youtube.com/watch?v=v7x75aN9liM)

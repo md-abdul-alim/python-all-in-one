@@ -33,9 +33,9 @@
   * [Dense Index](#dense-index)
   * [Sparse Index](#sparse-index)
 
-* [Normalization and Denormalization](#normalization-and-denormalization)
+* [Normalization and De-normalization](#normalization-and-de-normalization)
   * [Normalization](#normalization)
-  * [Denormalization](#denormalization)
+  * [De-normalization](#de-normalization)
 
 * [ACID and BASE consistency models](#acid-and-base-consistency-models)
   * [ACID](#acid)
@@ -118,7 +118,7 @@
 * [Microservice architecture](#microservice-architecture)
   * [Monolith Architecture](#monolith-architecture)
   * [Monoliths vs Microservices](#monoliths-vs-microservices)
-  * [Uber Nano services antipattern](#uber-nano-services-antipattern)
+  * [Uber Nano services anti-pattern](#uber-nano-services-anti-pattern)
   * [Uber Domain oriented microservice](#uber-domain-oriented-microservice)
   * [What does a typical microservice architecture look like?](#what-does-a-typical-microservice-architecture-look-like)
   * [Microservice Best Practices](#microservice-best-practices)
@@ -159,7 +159,7 @@
 * [Twitter Search](#twitter-search)
 * [Design Reddit](#design-reddit)
 * [Design Netflix](#design-netflix)
-* [Design Youtube](#design-youtube)
+* [Design YouTube](#design-youtube)
 * [Design Google Search](#design-google-search)
 * [Design E-commerce Store like Amazon](#design-e-commerce-store-like-amazon)
 * [Design Spotify](#design-spotify)
@@ -230,13 +230,13 @@
 * [Ref 4](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/sharding.md#sharding--data-partitioning)
 
 > #### De-normalization
-* [Ref](https://github.com/donnemartin/system-design-primer#denormalization)
+* [Ref](https://github.com/donnemartin/system-design-primer#de-normalization)
 
 > #### SQL tuning
 * [Ref](https://github.com/donnemartin/system-design-primer#sql-tuning)
 
 
-## NoSQLCP-consistency and partition tolerance
+## NoSQL
 > #### Key-value store
 * [Ref](https://github.com/donnemartin/system-design-primer#key-value-store)
 
@@ -296,12 +296,12 @@
   * [Ref](https://github.com/karanpratapsingh/system-design#sparse-index)
 
 
-## Normalization and Denormalization
+## Normalization and De-normalization
 #### [Ref](https://github.com/karanpratapsingh/system-design#normalization-and-denormalization)
 > #### Normalization
   * [Ref](https://github.com/karanpratapsingh/system-design#normalization)
 
-> #### Denormalization
+> #### De-normalization
   * [Ref](https://github.com/karanpratapsingh/system-design#denormalization)
 
 
@@ -508,7 +508,7 @@
   * [Ref](https://buttercms.com/books/microservices-for-startups/should-you-always-start-with-a-monolith/)
   #### Monoliths vs Microservices
   * [Ref](https://buttercms.com/books/microservices-for-startups/should-you-always-start-with-a-monolith/)
-  #### Uber Nano services antipattern
+  #### Uber Nano services anti-pattern
   * [Ref](https://www.youtube.com/watch?v=kb-m2fasdDY)
   #### Uber Domain oriented microservice
   * [Ref](https://eng.uber.com/microservice-architecture/)
@@ -580,7 +580,7 @@
   * [Ref](https://www.youtube.com/watch?v=KYExYE_9nIY)
   #### Design Netflix
   * [Ref](https://www.youtube.com/watch?v=psQzyFfsUGU)
-  #### Design Youtube
+  #### Design YouTube
   * [Ref 1](https://www.youtube.com/watch?v=jPKTo1iGQiE)
   * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/youtube.md)
   #### Design Google Search

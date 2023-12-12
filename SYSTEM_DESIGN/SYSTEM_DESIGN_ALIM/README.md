@@ -133,6 +133,9 @@
 
 ## Server and Network Design
 * [Client-Server Communication](#client-server-communication)
+* [Content Delivery Network (CDN)](#content-delivery-network-cdn)
+* [Latency vs Throughput](#latency-vs-hroughput)
+
 --------------------------------------
 # System Design Interview Problems
 
@@ -363,6 +366,7 @@
 * [Ref 1](https://github.com/ByteByteGoHq/system-design-101#cap-theorem)
 * [Ref 2](https://github.com/donnemartin/system-design-primer/tree/master#cap-theorem)
 * [Ref 3](https://github.com/karanpratapsingh/system-design#cap-theorem)
+* [Ref 4](https://www.bmc.com/blogs/cap-theorem/)
 
 > #### CP-consistency and partition tolerance
   * [Ref](https://github.com/donnemartin/system-design-primer/tree/master#cp---consistency-and-partition-tolerance)
@@ -531,6 +535,10 @@
 ## Server and Network Design
 #### Client-Server Communication
   * [Ref](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/client-server-communication.md#client-server-communication)
+#### Content Delivery Network (CDN)
+  * [Ref](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
+#### Latency vs Throughput
+  * [Ref](https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/)
 ---------------------------------
 ## System Design Interview Problems
 > ### Easy

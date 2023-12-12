@@ -132,7 +132,7 @@
 --------------------------------------
 
 ## Server and Network Design
-
+* [Client-Server Communication](#client-server-communication)
 --------------------------------------
 # System Design Interview Problems
 
@@ -154,7 +154,9 @@
 * [Design Tinder](#design-tinder)
 * [Design WhatsApp](#design-whatsapp)
 * [Design Facebook](#design-facebook)
+* [Facebook Newsfeed](#facebook-newsfeed)
 * [Design Twitter](#design-twitter)
+* [Twitter Search](#twitter-search)
 * [Design Reddit](#design-reddit)
 * [Design Netflix](#design-netflix)
 * [Design Youtube](#design-youtube)
@@ -180,6 +182,7 @@
 * [Design Distributed Counter](#design-distributed-counter)
 * [Design Location Based Service like Yelp](#design-location-based-service-like-yelp)
 * [Design Uber](#design-uber)
+* [Uber Backend](#uber-backend)
 * [Design Food Delivery App like Doordash](#design-food-delivery-app-like-doordash)
 * [Design Google Docs](#design-google-docs)
 * [Design Google Maps](#design-google-maps)
@@ -391,7 +394,8 @@
   * [Ref](https://github.com/donnemartin/system-design-primer#client-caching)
 
 > ### CDN caching
-  * [Ref](https://github.com/donnemartin/system-design-primer#cdn-caching)
+  * [Ref 1](https://github.com/donnemartin/system-design-primer#cdn-caching)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/caching.md#content-distributed-network-cdn)
 
 > ### Web server caching
   * [Ref](https://github.com/donnemartin/system-design-primer#web-server-caching)
@@ -415,6 +419,7 @@
 > ### Cache invalidation-When to update the cache
   * [Ref 1](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache)
   * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/caching.md#cache-invalidation)
+  * [Ref 3](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/caching.md#cache-invalidation)
 
 > #### Cache-aside
   * [Ref 1](https://github.com/donnemartin/system-design-primer#cache-aside)
@@ -521,16 +526,22 @@
   * [Ref](https://www.youtube.com/watch?v=STKCRSUsyP0)
   #### Event Driven Architecture
   * [Ref](https://martinfowler.com/articles/201701-event-driven.html)
+---------------------------------
 
+## Server and Network Design
+#### Client-Server Communication
+  * [Ref](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/client-server-communication.md#client-server-communication)
 ---------------------------------
 ## System Design Interview Problems
 > ### Easy
   #### Design Leaderboard
   * [Ref](https://systemdesign.one/leaderboard-system-design/)
   #### Design URL Shortener like TinyURL
-  * [Ref](https://www.youtube.com/watch?v=fMZMm_0ZhK4&themeRefresh=1)
+  * [Ref 1](https://www.youtube.com/watch?v=fMZMm_0ZhK4&themeRefresh=1)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/short-url.md)
   #### Design Text Storage Service like Pastebin
-  * [Ref](https://www.youtube.com/watch?v=josjRSBqEBI)
+  * [Ref 1](https://www.youtube.com/watch?v=josjRSBqEBI)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/pastebin.md)
   #### Design Content Delivery Network (CDN)
   * [Ref](https://www.youtube.com/watch?v=8zX0rue2Hic)
   #### Design Parking Garage
@@ -550,21 +561,28 @@
 
 > ### Medium
   #### Design Instagram
-  * [Ref](https://www.youtube.com/watch?v=VJpfO6KdyWE)
+  * [Ref 1](https://www.youtube.com/watch?v=VJpfO6KdyWE)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/instagram.md)
   #### Design Tinder
   * [Ref](https://www.youtube.com/watch?v=tndzLznxq40)
   #### Design WhatsApp
   * [Ref](https://www.youtube.com/watch?v=vvhC64hQZMk)
   #### Design Facebook
   * [Ref](https://www.youtube.com/watch?v=9-hjBGxuiEs)
+  #### Facebook Newsfeed
+  * [Ref](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/facebook-newsfeed.md)
   #### Design Twitter
-  * [Ref](https://www.youtube.com/watch?v=wYk0xPP_P_8)
+  * [Ref 1](https://www.youtube.com/watch?v=wYk0xPP_P_8)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/twitter.md)
+  #### Twitter Search
+  * [Ref](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/twitter-search.md)
   #### Design Reddit
   * [Ref](https://www.youtube.com/watch?v=KYExYE_9nIY)
   #### Design Netflix
   * [Ref](https://www.youtube.com/watch?v=psQzyFfsUGU)
   #### Design Youtube
-  * [Ref](https://www.youtube.com/watch?v=jPKTo1iGQiE)
+  * [Ref 1](https://www.youtube.com/watch?v=jPKTo1iGQiE)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/youtube.md)
   #### Design Google Search
   * [Ref](https://www.youtube.com/watch?v=CeGtqouT8eA)
   #### Design E-commerce Store like Amazon
@@ -604,9 +622,12 @@
   #### Design Distributed Counter
   * [Ref](https://systemdesign.one/distributed-counter-system-design/)
   #### Design Location Based Service like Yelp
-  * [Ref](https://www.youtube.com/watch?v=M4lR_Va97cQ)
+  * [Ref 1](https://www.youtube.com/watch?v=M4lR_Va97cQ)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/yelp.md)
   #### Design Uber
   * [Ref](https://www.youtube.com/watch?v=umWABit-wbk)
+  #### Uber Backend
+  * [Ref](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/uber-backend.md)
   #### Design Food Delivery App like Doordash
   * [Ref](https://www.youtube.com/watch?v=iRhSAR3ldTw)
   #### Design Google Docs
@@ -616,11 +637,13 @@
   #### Design Zoom
   * [Ref](https://www.youtube.com/watch?v=G32ThJakeHk)
   #### Design File Sharing System like Dropbox
-  * [Ref](https://www.youtube.com/watch?v=U0xTu6E2CT8)
+  * [Ref 1](https://www.youtube.com/watch?v=U0xTu6E2CT8)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/dropbox.md)
   #### Design Ticket Booking System like BookMyShow
   * [Ref](https://www.youtube.com/watch?v=lBAwJgoO3Ek)
   #### Design Distributed Web Crawler
-  * [Ref](https://www.youtube.com/watch?v=BKZxZwUgL3Y)
+  * [Ref 1](https://www.youtube.com/watch?v=BKZxZwUgL3Y)
+  * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/web-crawler.md)
   #### Design Code Deployment System
   * [Ref](https://www.youtube.com/watch?v=q0KGYwNbf-0)
   #### Design Distributed Cloud Storage like S3

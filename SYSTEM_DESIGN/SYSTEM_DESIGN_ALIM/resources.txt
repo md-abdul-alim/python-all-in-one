@@ -1,7 +1,6 @@
 https://github.com/search?q=system+design&type=repositories&p=1
 
 
-https://github.com/madd86/awesome-system-design#articles
 https://github.com/ashishps1/awesome-system-design-resources
 https://github.com/puncsky/system-design-and-architecture/tree/master
 https://github.com/codersguild/System-Design
@@ -9,3 +8,4 @@ https://github.com/weeeBox/mobile-system-design
 
 most important : https://github.com/newTendermint/awesome-bigdata/blob/master/README.md
 most important : https://github.com/DreamOfTheRedChamber/system-design-interviews/tree/master
+most important : https://aws.amazon.com/compare/

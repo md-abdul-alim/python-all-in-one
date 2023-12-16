@@ -2,6 +2,7 @@
 ## Database
 * [SQL](#sql)
   * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
+  * [Database Scaling](#database-scaling)
     * [Replication](#replication)
       * [Master-Slave](#master-slave)
       * [Master-Master](#master-master)
@@ -71,6 +72,7 @@
     * [Availability patterns](#availability-patterns)
 * [PACELC Theorem](#pacelc-theorem)
 * [Types of Memory and Storage](#types-of-memory-and-storage)
+* [Data Redundancy](#data-redundancy)
 * [Visualizing a SQL query](#visualizing-a-sql-query)
 * [SQL language](#sql-language)
 --------------------------------------
@@ -121,6 +123,7 @@
 
 * [Microservice architecture](#microservice-architecture)
   * [Microservices Architecture](#microservices-architecture)
+  * [Circuit Breaker Pattern](#circuit-breaker-pattern)
   * [Netflix Microservices](#netflix-microservices)
   * [Monolith Architecture](#monolith-architecture)
   * [Monoliths vs Microservices](#monoliths-vs-microservices)
@@ -142,7 +145,12 @@
 * [Content Delivery Network (CDN)](#content-delivery-network-cdn)
 * [Latency vs Throughput](#latency-vs-hroughput)
 * [Rate Limiting](#rate-limiting)
-
+* [Batch Processing vs Stream Processing](#batch-processing-vs-stream-processing)
+* [Proxy Server](#proxy-server)
+* [Domain Name System (DNS)](#domain-name-system-dns)
+* [Message Queues](#message-queues)
+* [WebSockets](#websockets)
+* [API Gateway](#api-gateway)
 --------------------------------------
 # System Design Interview Problems
 
@@ -212,10 +220,12 @@
 ### Relational database management system (RDBMS)
 * [Ref](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
 
+### Database Scaling
+* [Ref](https://thenewstack.io/techniques-for-scaling-applications-with-a-database/)
 > #### Replication
-
 * [Ref 1](https://github.com/lahin31/system-design-bangla/tree/master#section-18-database-replication)
 * [Ref 2](https://github.com/karanpratapsingh/system-design#database-replication)
+* [Ref 3](https://redis.com/blog/what-is-data-replication/)
 
 #### Master-Slave
 * [Ref 1](https://github.com/donnemartin/system-design-primer#master-slave-replication)
@@ -238,6 +248,7 @@
 * [Ref 2](https://github.com/lahin31/system-design-bangla/tree/master#section-17-database-sharding)
 * [Ref 3](https://github.com/karanpratapsingh/system-design#sharding)
 * [Ref 4](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/sharding.md#sharding--data-partitioning)
+* [Ref 5](https://www.mongodb.com/features/database-sharding-explained)
 
 > #### De-normalization
 * [Ref](https://github.com/donnemartin/system-design-primer#de-normalization)
@@ -397,6 +408,8 @@
 ### Types of Memory and Storage
 * [Ref](https://github.com/ByteByteGoHq/system-design-101#types-of-memory-and-storage)
 
+### Data Redundancy
+* [Ref](https://www.egnyte.com/guides/governance/data-redundancy)
 ### Visualizing a SQL query
 * [Ref](https://github.com/ByteByteGoHq/system-design-101#visualizing-a-sql-query)
 
@@ -524,6 +537,8 @@
 > ### Microservice architecture
   #### Microservices Architecture
   * [Ref](https://medium.com/hashmapinc/the-what-why-and-how-of-a-microservices-architecture-4179579423a9)
+  #### Circuit Breaker Pattern
+  * [Ref](https://medium.com/geekculture/design-patterns-for-microservices-circuit-breaker-pattern-276249ffab33)
   #### Netflix Microservices
   * [Ref](https://newsletter.systemdesign.one/p/netflix-microservices)
   #### Monolith Architecture
@@ -559,6 +574,18 @@
   * [Ref](https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/)
 #### Rate Limiting
   * [Ref](https://www.imperva.com/learn/application-security/rate-limiting/)
+#### Batch Processing vs Stream Processing
+  * [Ref](https://atlan.com/batch-processing-vs-stream-processing/)
+#### Proxy Server
+  * [Ref](https://www.fortinet.com/resources/cyberglossary/proxy-server)
+#### Domain Name System (DNS)
+  * [Ref](https://www.cloudflare.com/learning/dns/what-is-dns/)
+#### Message Queues
+  * [Ref](https://medium.com/must-know-computer-science/system-design-message-queues-245612428a22)
+#### WebSockets
+  * [Ref](https://www.pubnub.com/guides/websockets/)
+#### API Gateway
+  * [Ref](https://www.nginx.com/learn/api-gateway/)
 ---------------------------------
 ## System Design Interview Problems
 > ### Easy

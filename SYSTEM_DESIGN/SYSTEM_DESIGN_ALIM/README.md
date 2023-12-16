@@ -135,6 +135,7 @@
 * [Client-Server Communication](#client-server-communication)
 * [Content Delivery Network (CDN)](#content-delivery-network-cdn)
 * [Latency vs Throughput](#latency-vs-hroughput)
+* [Rate Limiting](#rate-limiting)
 
 --------------------------------------
 # System Design Interview Problems
@@ -291,7 +292,8 @@
 
 
 ## Indexes
-#### [Ref](https://github.com/karanpratapsingh/system-design#indexes)
+#### [Ref 1](https://github.com/karanpratapsingh/system-design#indexes)
+#### [Ref 2](https://www.progress.com/tutorials/odbc/using-indexes)
 > #### Dense Index
   * [Ref](https://github.com/karanpratapsingh/system-design#dense-index)
 
@@ -539,6 +541,8 @@
   * [Ref](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
 #### Latency vs Throughput
   * [Ref](https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/)
+#### Rate Limiting
+  * [Ref](https://www.imperva.com/learn/application-security/rate-limiting/)
 ---------------------------------
 ## System Design Interview Problems
 > ### Easy

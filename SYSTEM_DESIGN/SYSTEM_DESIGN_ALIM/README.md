@@ -116,6 +116,8 @@
   * [Domain Driven Design](#domain-driven-design)
 
 * [Microservice architecture](#microservice-architecture)
+  * [Microservices Architecture](#microservices-architecture)
+  * [Netflix Microservices](#netflix-microservices)
   * [Monolith Architecture](#monolith-architecture)
   * [Monoliths vs Microservices](#monoliths-vs-microservices)
   * [Uber Nano services anti-pattern](#uber-nano-services-anti-pattern)
@@ -510,6 +512,10 @@
 
 
 > ### Microservice architecture
+  #### Microservices Architecture
+  * [Ref](https://medium.com/hashmapinc/the-what-why-and-how-of-a-microservices-architecture-4179579423a9)
+  #### Netflix Microservices
+  * [Ref](https://newsletter.systemdesign.one/p/netflix-microservices)
   #### Monolith Architecture
   * [Ref](https://buttercms.com/books/microservices-for-startups/should-you-always-start-with-a-monolith/)
   #### Monoliths vs Microservices

@@ -193,6 +193,9 @@
 * [Design an Analytics Platform (Metrics & Logging)](#design-an-analytics-platform-metrics--logging)
 * [Design Notification Service](#design-notification-service)
 * [Design Payment System](#design-payment-system)
+* [Designing payment webhook](#designing-payment-webhook)
+* [Design Paypal Payment System](#design-paypal-payment-system)
+* [Design Pinterest](#design-pinterest)
 
 ## Hard
 * [Design Slack](#design-slack)
@@ -594,6 +597,7 @@
   #### Design URL Shortener like TinyURL
   * [Ref 1](https://www.youtube.com/watch?v=fMZMm_0ZhK4&themeRefresh=1)
   * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/short-url.md)
+  * [Ref 3](https://github.com/puncsky/system-design-and-architecture/blob/master/en/84-designing-a-url-shortener.md)
   #### Design Text Storage Service like Pastebin
   * [Ref 1](https://www.youtube.com/watch?v=josjRSBqEBI)
   * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/pastebin.md)
@@ -623,7 +627,9 @@
   #### Design WhatsApp
   * [Ref](https://www.youtube.com/watch?v=vvhC64hQZMk)
   #### Design Facebook
-  * [Ref](https://www.youtube.com/watch?v=9-hjBGxuiEs)
+  * [Ref 1](https://www.youtube.com/watch?v=9-hjBGxuiEs)
+  * [Ref 2](https://github.com/puncsky/system-design-and-architecture/blob/master/en/49-facebook-tao.md)
+  * [Ref 3](https://github.com/puncsky/system-design-and-architecture/blob/master/en/121-designing-facebook-photo-storage.md)
   #### Facebook Newsfeed
   * [Ref](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/facebook-newsfeed.md)
   #### Design Twitter
@@ -634,7 +640,8 @@
   #### Design Reddit
   * [Ref](https://www.youtube.com/watch?v=KYExYE_9nIY)
   #### Design Netflix
-  * [Ref](https://www.youtube.com/watch?v=psQzyFfsUGU)
+  * [Ref 1](https://www.youtube.com/watch?v=psQzyFfsUGU)
+  * [Ref 2](https://github.com/puncsky/system-design-and-architecture/blob/master/en/38-how-to-stream-video-over-http.md)
   #### Design YouTube
   * [Ref 1](https://www.youtube.com/watch?v=jPKTo1iGQiE)
   * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/youtube.md)
@@ -661,13 +668,22 @@
   #### Design Online Code Editor
   * [Ref](https://www.youtube.com/watch?v=07jkn4jUtso)
   #### Design Stock Exchange System
-  * [Ref](https://www.youtube.com/watch?v=dUMWMZmMsVE)
+  * [Ref 1](https://www.youtube.com/watch?v=dUMWMZmMsVE)
+  * [Ref 2](https://github.com/puncsky/system-design-and-architecture/blob/master/en/161-designing-stock-exchange.md)
+  * [Ref 3](https://github.com/puncsky/system-design-and-architecture/blob/master/en/162-designing-smart-notification-of-stock-price-changes.md)
   #### Design an Analytics Platform (Metrics & Logging)
-  * [Ref](https://www.youtube.com/watch?v=kIcq1_pBQSY)
+  * [Ref 1](https://www.youtube.com/watch?v=kIcq1_pBQSY)
+  * [Ref 2](https://github.com/puncsky/system-design-and-architecture/blob/master/en/61-what-is-apache-kafka.md)
   #### Design Notification Service
   * [Ref](https://www.youtube.com/watch?v=CUwt9_l0DOg)
   #### Design Payment System
   * [Ref](https://www.youtube.com/watch?v=olfaBgJrUBI)
+  #### Designing payment webhook
+  * [Ref](https://github.com/puncsky/system-design-and-architecture/blob/master/en/166-designing-payment-webhook.md)
+  #### Design Paypal Payment System
+  * [Ref](https://github.com/puncsky/system-design-and-architecture/blob/master/en/167-designing-paypal-money-transfer.md)
+  #### Design Pinterest
+  * [Ref](https://github.com/puncsky/system-design-and-architecture/blob/master/en/2016-02-13-crack-the-system-design-interview.md#design-pinterest)
 
 > ### Hard
   #### Design Slack
@@ -680,7 +696,8 @@
   * [Ref 1](https://www.youtube.com/watch?v=M4lR_Va97cQ)
   * [Ref 2](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/yelp.md)
   #### Design Uber
-  * [Ref](https://www.youtube.com/watch?v=umWABit-wbk)
+  * [Ref 1](https://www.youtube.com/watch?v=umWABit-wbk)
+  * [Ref 2](https://github.com/puncsky/system-design-and-architecture/blob/master/en/120-designing-uber.md)
   #### Uber Backend
   * [Ref](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/designs/uber-backend.md)
   #### Design Food Delivery App like Doordash

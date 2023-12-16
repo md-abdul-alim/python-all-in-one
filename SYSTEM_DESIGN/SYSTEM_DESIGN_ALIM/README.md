@@ -44,6 +44,10 @@
 * [Transactions](#transactions)
   * [Distributed Transactions](#distributed-transactions)
 
+* [Eventual vs Strong Consistency in Distributed Databases](#eventual-vs-strong-consistency-in-distributed-databases)
+
+* [Consistency Patterns](#consistency-patterns)
+
 * [Consistent Hashing](#consistent-hashing)
 
 * [SQL vs NoSQL](#sql-vs-nosql)
@@ -326,6 +330,12 @@
 #### [Ref](https://github.com/karanpratapsingh/system-design#transactions)
 > #### Distributed Transactions
   * [Ref](https://github.com/karanpratapsingh/system-design#distributed-transactions)
+
+## Eventual vs Strong Consistency in Distributed Databases
+#### [Ref](https://hackernoon.com/eventual-vs-strong-consistency-in-distributed-databases-282fdad37cf7)
+
+## Consistency Patterns
+#### [Ref](https://systemdesign.one/consistency-patterns/)
 
 ## Consistent Hashing
 #### [Ref 1](https://tom-e-white.com/2007/11/consistent-hashing.html)

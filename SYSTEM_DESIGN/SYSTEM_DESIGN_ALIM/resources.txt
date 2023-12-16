@@ -1,7 +1,6 @@
 https://github.com/search?q=system+design&type=repositories&p=1
 
 
-https://github.com/ashishps1/awesome-system-design-resources
 https://github.com/puncsky/system-design-and-architecture/tree/master
 https://github.com/codersguild/System-Design
 https://github.com/weeeBox/mobile-system-design

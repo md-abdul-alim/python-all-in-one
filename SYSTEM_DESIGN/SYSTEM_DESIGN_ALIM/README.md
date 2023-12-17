@@ -143,7 +143,8 @@
 ## Server and Network Design
 * [Client-Server Communication](#client-server-communication)
 * [Content Delivery Network (CDN)](#content-delivery-network-cdn)
-* [Latency vs Throughput](#latency-vs-hroughput)
+* [Latency vs Throughput](#latency-vs-throughput)
+* [Performance vs scalability](#performance-vs-scalability)
 * [Rate Limiting](#rate-limiting)
 * [Batch Processing vs Stream Processing](#batch-processing-vs-stream-processing)
 * [Proxy Server](#proxy-server)
@@ -578,7 +579,10 @@
 #### Content Delivery Network (CDN)
   * [Ref](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
 #### Latency vs Throughput
-  * [Ref](https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/)
+  * [Ref 1](https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/)
+  * [Ref 2](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#latency-vs-throughput)
+#### Performance vs scalability
+  * [Ref](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#performance-vs-scalability)
 #### Rate Limiting
   * [Ref](https://www.imperva.com/learn/application-security/rate-limiting/)
 #### Batch Processing vs Stream Processing

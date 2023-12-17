@@ -218,7 +218,7 @@
 * [Design Code Deployment System](#design-code-deployment-system)
 * [Design Distributed Cloud Storage like S3](#design-distributed-cloud-storage-like-s3)
 * [Design Distributed Locking Service](#design-distributed-locking-service)
-
+* [Cloud Design Patterns](#cloud-design-patterns)
 --------------------------------------
 
 
@@ -582,7 +582,8 @@
 #### Rate Limiting
   * [Ref](https://www.imperva.com/learn/application-security/rate-limiting/)
 #### Batch Processing vs Stream Processing
-  * [Ref](https://atlan.com/batch-processing-vs-stream-processing/)
+  * [Ref 1](https://atlan.com/batch-processing-vs-stream-processing/)
+  * [Ref 2](https://github.com/puncsky/system-design-and-architecture/blob/master/en/137-stream-and-batch-processing.md)
 #### Proxy Server
   * [Ref](https://www.fortinet.com/resources/cyberglossary/proxy-server)
 #### Domain Name System (DNS)
@@ -734,3 +735,5 @@
   * [Ref](https://www.youtube.com/watch?v=UmWtcgC96X8)
   #### Design Distributed Locking Service
   * [Ref](https://www.youtube.com/watch?v=v7x75aN9liM)
+  #### Cloud Design Patterns
+  * [Ref](https://learn.microsoft.com/en-us/azure/architecture/patterns/)

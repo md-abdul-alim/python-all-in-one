@@ -113,6 +113,7 @@
 
 ## Architectural Design
 * [Software Architecture](#software-architecture)
+  * [Application layer](#application-layer) 
   * [MVC, MVP, MVVM, MVVM-C, and VIPER](#mvc-mvp-mvvm-mvvm-c-and-viper)
   * [18 Key Design Patterns](#18-key-design-patterns)
   * [Hexagonal Architecture](#hexagonal-architecture)
@@ -144,15 +145,20 @@
 * [Client-Server Communication](#client-server-communication)
 * [Content Delivery Network (CDN)](#content-delivery-network-cdn)
 * [Load balancer](#load-balancer)
+* [Proxy Server](#proxy-server)
+* [Reverse proxy (web server)](#reverse-proxy-web-server)
 * [Latency vs Throughput](#latency-vs-throughput)
 * [Performance vs scalability](#performance-vs-scalability)
 * [Rate Limiting](#rate-limiting)
 * [Batch Processing vs Stream Processing](#batch-processing-vs-stream-processing)
-* [Proxy Server](#proxy-server)
 * [Domain Name System (DNS)](#domain-name-system-dns)
-* [Message Queues](#message-queues)
+* [Asynchronism](#asynchronism)
+  * [Message queues](#message-queues)
+  * [Task queues](#task-queues)
+  * [Back pressure](#back-pressure)
 * [WebSockets](#websockets)
 * [API Gateway](#api-gateway)
+* [Communication](#communication)
 --------------------------------------
 # System Design Interview Problems
 
@@ -524,7 +530,8 @@
 
 ## Architectural Design
 > ### Software Architecture
-
+  #### Application layer
+  * [Ref](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#application-layer)
   #### MVC, MVP, MVVM, MVVM-C, and VIPER
   * [Ref 1](https://github.com/ByteByteGoHq/system-design-101#mvc-mvp-mvvm-mvvm-c-and-viper)
   * [Ref 2](https://www.linkedin.com/posts/ginacostag_developer-software-python-activity-7134888640513495040-oARO?utm_source=share&utm_medium=member_desktop)
@@ -575,34 +582,44 @@
 ---------------------------------
 
 ## Server and Network Design
-#### Client-Server Communication
+### Client-Server Communication
   * [Ref](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/client-server-communication.md#client-server-communication)
-#### Content Delivery Network (CDN)
+### Content Delivery Network (CDN)
   * [Ref 1](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
   * [Ref 2](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network)
-#### Load balancer
+### Load balancer
   * [Ref](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#load-balancer)
-#### Latency vs Throughput
+### Proxy Server
+  * [Ref](https://www.fortinet.com/resources/cyberglossary/proxy-server)
+### Reverse proxy (web server)
+  * [Ref](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#reverse-proxy-web-server)
+### Latency vs Throughput
   * [Ref 1](https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/)
   * [Ref 2](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#latency-vs-throughput)
-#### Performance vs scalability
+### Performance vs scalability
   * [Ref](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#performance-vs-scalability)
-#### Rate Limiting
+### Rate Limiting
   * [Ref](https://www.imperva.com/learn/application-security/rate-limiting/)
-#### Batch Processing vs Stream Processing
+### Batch Processing vs Stream Processing
   * [Ref 1](https://atlan.com/batch-processing-vs-stream-processing/)
   * [Ref 2](https://github.com/puncsky/system-design-and-architecture/blob/master/en/137-stream-and-batch-processing.md)
-#### Proxy Server
-  * [Ref](https://www.fortinet.com/resources/cyberglossary/proxy-server)
-#### Domain Name System (DNS)
+### Domain Name System (DNS)
   * [Ref 1](https://www.cloudflare.com/learning/dns/what-is-dns/)
   * [Ref 2](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#domain-name-system)
-#### Message Queues
+### Asynchronism
+  * [Ref](https://github.com/donnemartin/system-design-primer#asynchronism)
+  #### Message Queues
   * [Ref](https://medium.com/must-know-computer-science/system-design-message-queues-245612428a22)
-#### WebSockets
+  #### Task queues
+  * [Ref](https://github.com/donnemartin/system-design-primer#task-queues)
+  #### Back pressure
+  * [Ref](https://github.com/donnemartin/system-design-primer#back-pressure)
+### WebSockets
   * [Ref](https://www.pubnub.com/guides/websockets/)
-#### API Gateway
+### API Gateway
   * [Ref](https://www.nginx.com/learn/api-gateway/)
+### Communication
+  * [Ref](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#communication)
 ---------------------------------
 ## System Design Interview Problems
 > ### Easy

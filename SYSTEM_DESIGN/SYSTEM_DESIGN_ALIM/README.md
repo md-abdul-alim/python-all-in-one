@@ -166,6 +166,10 @@
 * [Design Distributed Job Scheduler](#design-distributed-job-scheduler)
 * [Design Authentication System](#design-authentication-system)
 * [Design Unified Payments Interface (UPI)](#design-unified-payments-interface-upi)
+* [Design type-ahead search or autocomplete](#design-type-ahead-search-or-autocomplete)
+* [Design a Load Balancer or Dropbox Bandaid](#design-a-load-balancer-or-dropbox-bandaid)
+* [Fraud Detection with Semi-supervised Learning](#fraud-detection-with-semi-supervised-learning)
+* [Design Online Judge](#design-online-judge)
 
 ## Medium
 * [Design Instagram](#design-instagram)
@@ -617,6 +621,14 @@
   * [Ref](https://www.youtube.com/watch?v=uj_4vxm9u90)
   #### Design Unified Payments Interface (UPI)
   * [Ref](https://www.youtube.com/watch?v=QpLy0_c_RXk)
+  #### Design type-ahead search or autocomplete
+  * [Ref](https://github.com/puncsky/system-design-and-architecture/blob/master/en/179-designing-typeahead-search-or-autocomplete.md)
+  #### Design a Load Balancer or Dropbox Bandaid
+  * [Ref](https://github.com/puncsky/system-design-and-architecture/blob/master/en/182-designing-l7-load-balancer.md)
+  #### Fraud Detection with Semi-supervised Learning
+  * [Ref](https://github.com/puncsky/system-design-and-architecture/blob/master/en/136-fraud-detection-with-semi-supervised-learning.md)
+  #### Design Online Judge
+  * [Ref](https://tianpan.co/notes/243-designing-online-judge-or-leetcode)
 
 > ### Medium
   #### Design Instagram

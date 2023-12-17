@@ -143,6 +143,7 @@
 ## Server and Network Design
 * [Client-Server Communication](#client-server-communication)
 * [Content Delivery Network (CDN)](#content-delivery-network-cdn)
+* [Load balancer](#load-balancer)
 * [Latency vs Throughput](#latency-vs-throughput)
 * [Performance vs scalability](#performance-vs-scalability)
 * [Rate Limiting](#rate-limiting)
@@ -577,7 +578,10 @@
 #### Client-Server Communication
   * [Ref](https://github.com/Jeevan-kumar-Raj/Grokking-System-Design/blob/master/basics/client-server-communication.md#client-server-communication)
 #### Content Delivery Network (CDN)
-  * [Ref](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
+  * [Ref 1](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
+  * [Ref 2](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network)
+#### Load balancer
+  * [Ref](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#load-balancer)
 #### Latency vs Throughput
   * [Ref 1](https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/)
   * [Ref 2](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#latency-vs-throughput)
@@ -591,7 +595,8 @@
 #### Proxy Server
   * [Ref](https://www.fortinet.com/resources/cyberglossary/proxy-server)
 #### Domain Name System (DNS)
-  * [Ref](https://www.cloudflare.com/learning/dns/what-is-dns/)
+  * [Ref 1](https://www.cloudflare.com/learning/dns/what-is-dns/)
+  * [Ref 2](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#domain-name-system)
 #### Message Queues
   * [Ref](https://medium.com/must-know-computer-science/system-design-message-queues-245612428a22)
 #### WebSockets
